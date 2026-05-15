@@ -68,6 +68,9 @@ const layout = {
         
         <div class="footer-bottom">
           <p>© 2026 Mình Ơi Media. Crafted with love for your wedding story.</p>
+          <p style="margin-top: 10px; font-size: 10px; opacity: 0.6;">
+            Designed and created by <a href="https://web.facebook.com/hugowishpax/" target="_blank" style="color: inherit; text-decoration: underline; opacity: 1;">Pet Hugo Wishpax Le</a>
+          </p>
         </div>
       </div>
     </footer>

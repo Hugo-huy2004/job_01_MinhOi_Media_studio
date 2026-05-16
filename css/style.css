@@ -546,15 +546,20 @@ li {
 .price-card li {
   margin-bottom: var(--spacing-sm);
   color: var(--gray-medium);
-  padding-left: 20px;
   position: relative;
 }
 
 .price-card li::before {
-  content: '•';
-  position: absolute;
-  left: 0;
+  content: none;
+}
+
+.price-header {
+  list-style: none !important;
+  margin-left: 0 !important;
+  padding-left: 0 !important;
+  font-weight: 700;
   color: var(--primary);
+  margin-bottom: 5px;
 }
 
 .price-card.popular::before {
@@ -1600,7 +1605,18 @@ li {
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05) !important;
-    text-align: center;
+    text-align: center !important;
+    padding: 30px 25px !important;
+  }
+
+  .price-card h3,
+  .price-card .price,
+  .price-card ul,
+  .price-card li,
+  .price-header {
+    text-align: center !important;
+    padding-left: 0 !important;
+    margin-left: 0 !important;
   }
 
   .price-footer .price-grid {

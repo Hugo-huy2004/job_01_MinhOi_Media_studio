@@ -596,6 +596,44 @@ li {
     pointer-events: none;
     animation: shine-ribbon-left 3s infinite;
   }
+
+  /* Best Choice Persuasion System */
+  .card-highlight {
+    background: rgba(83, 67, 59, 0.05);
+    border-radius: 12px;
+    padding: 15px;
+    margin-bottom: 20px;
+    border-left: 3px solid var(--primary);
+  }
+
+  .card-highlight h4 {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 8px;
+    color: var(--primary);
+    font-weight: 700;
+  }
+
+  .card-highlight p {
+    font-size: 12px;
+    line-height: 1.5;
+    color: var(--primary);
+    opacity: 0.8;
+  }
+
+  .highlight-badge {
+    display: inline-block;
+    padding: 4px 12px;
+    background: var(--primary);
+    color: white;
+    font-size: 10px;
+    font-weight: 700;
+    text-transform: uppercase;
+    border-radius: 20px;
+    margin-bottom: 10px;
+    letter-spacing: 1px;
+  }
 }
 
 @keyframes shine-ribbon-left {

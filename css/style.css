@@ -401,9 +401,17 @@ li {
 }
 
 @keyframes liquid-bg {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 .pricing-tab {
@@ -413,7 +421,7 @@ li {
 
 .tab-badge {
   position: absolute;
-  top: -18px; 
+  top: -18px;
   right: -8px;
   font-size: 8px;
   padding: 2px 10px;
@@ -421,8 +429,8 @@ li {
   font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 1px;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-  overflow: hidden; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
 }
 
 .tab-badge::after {
@@ -432,51 +440,67 @@ li {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: linear-gradient(
-    90deg, 
-    transparent, 
-    rgba(255, 255, 255, 0.4), 
-    transparent
-  );
+  background: linear-gradient(90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent);
   transition: none;
   animation: shine 3s infinite;
 }
 
 @keyframes shine {
-  0% { left: -100%; }
-  20% { left: 100%; }
-  100% { left: 100%; }
+  0% {
+    left: -100%;
+  }
+
+  20% {
+    left: 100%;
+  }
+
+  100% {
+    left: 100%;
+  }
 }
 
 .tab-badge.hot {
   background: linear-gradient(135deg, #ff4757, #ff6b81);
   color: white;
-  border: 1px solid rgba(255,255,255,0.2);
+  border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 .tab-badge.premium {
-  background: linear-gradient(135deg, #d4af37, #f9d71c, #d4af37); 
-  color: #53433b; 
-  border: 1px solid rgba(255,255,255,0.4);
+  background: linear-gradient(135deg, #d4af37, #f9d71c, #d4af37);
+  color: #53433b;
+  border: 1px solid rgba(255, 255, 255, 0.4);
 }
 
 @keyframes pulse-small {
-  0% { transform: scale(1); }
-  50% { transform: scale(1.05); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  50% {
+    transform: scale(1.05);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .price-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--spacing-xl);
+  gap: 30px;
   justify-content: center;
-  padding: 20px 40px; 
+  padding: 20px 40px;
+  max-width: 1400px;
+  margin: 0 auto;
   overflow: visible;
 }
 
 .price-card {
-  background: rgba(255, 255, 255, 0.45); 
+  background: rgba(255, 255, 255, 0.45);
   backdrop-filter: blur(15px);
   -webkit-backdrop-filter: blur(15px);
   border-radius: 24px;
@@ -485,9 +509,9 @@ li {
   flex-direction: column;
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
-  border: 1px solid rgba(255, 255, 255, 0.5); 
+  border: 1px solid rgba(255, 255, 255, 0.5);
   overflow: visible;
-  box-shadow: 
+  box-shadow:
     0 10px 40px rgba(83, 67, 59, 0.05),
     inset 0 0 20px rgba(255, 255, 255, 0.2);
 }
@@ -536,30 +560,51 @@ li {
 .price-card.popular::before {
   content: '❤';
   position: absolute;
-  top: -20px;
+  top: -15px;
   left: -15px;
-  font-size: 60px;
+  font-size: 40px;
   color: #800000;
   z-index: 30;
-  text-shadow: 
-    2px 2px 0px #fff,
-    -2px -2px 0px #fff,
-    2px -2px 0px #fff,
-    -2px 2px 0px #fff,
-    0 10px 20px rgba(0,0,0,0.3);
+  text-shadow:
+    0 4px 15px rgba(0, 0, 0, 0.2);
   transition: var(--transition);
+}
+
+/* Best Choice Persuasion System */
+.card-highlight {
+  background: rgba(83, 67, 59, 0.05);
+  border-radius: 12px;
+  padding: 15px;
+  margin-bottom: 20px;
+  border-left: 3px solid var(--primary);
+}
+
+.card-highlight h4 {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 8px;
+  color: var(--primary);
+  font-weight: 700;
+}
+
+.card-highlight p {
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--primary);
+  opacity: 0.8;
 }
 
 @media (max-width: 1199px) {
   .price-card.popular {
-    overflow: hidden; 
+    overflow: hidden;
   }
 
   .price-card.popular::before {
     content: 'BEST CHOICE';
     position: absolute;
     top: 25px;
-    left: -40px; 
+    left: -40px;
     width: 160px;
     padding: 10px 0;
     background: linear-gradient(135deg, #800000, #a52a2a);
@@ -571,8 +616,8 @@ li {
     text-transform: uppercase;
     text-align: center;
     transform: rotate(-45deg);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-    text-shadow: none; 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    text-shadow: none;
     z-index: 30;
     border: none;
     white-space: nowrap;
@@ -585,42 +630,16 @@ li {
     left: -40px;
     width: 160px;
     height: 40px;
-    background: linear-gradient(
-      90deg, 
-      transparent, 
-      rgba(255, 255, 255, 0.3), 
-      transparent
-    );
+    background: linear-gradient(90deg,
+        transparent,
+        rgba(255, 255, 255, 0.3),
+        transparent);
     transform: rotate(-45deg);
     z-index: 31;
     pointer-events: none;
     animation: shine-ribbon-left 3s infinite;
   }
-
-  /* Best Choice Persuasion System */
-  .card-highlight {
-    background: rgba(83, 67, 59, 0.05);
-    border-radius: 12px;
-    padding: 15px;
-    margin-bottom: 20px;
-    border-left: 3px solid var(--primary);
-  }
-
-  .card-highlight h4 {
-    font-size: 13px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    margin-bottom: 8px;
-    color: var(--primary);
-    font-weight: 700;
-  }
-
-  .card-highlight p {
-    font-size: 12px;
-    line-height: 1.5;
-    color: var(--primary);
-    opacity: 0.8;
-  }
+}
 
   .highlight-badge {
     display: inline-block;
@@ -637,9 +656,17 @@ li {
 }
 
 @keyframes shine-ribbon-left {
-  0% { transform: rotate(-45deg) translateX(-100%); }
-  20% { transform: rotate(-45deg) translateX(100%); }
-  100% { transform: rotate(-45deg) translateX(100%); }
+  0% {
+    transform: rotate(-45deg) translateX(-100%);
+  }
+
+  20% {
+    transform: rotate(-45deg) translateX(100%);
+  }
+
+  100% {
+    transform: rotate(-45deg) translateX(100%);
+  }
 }
 
 .price-card.popular {
@@ -647,9 +674,17 @@ li {
 }
 
 @keyframes shine-ribbon {
-  0% { transform: rotate(45deg) translateX(-100%); }
-  20% { transform: rotate(45deg) translateX(100%); }
-  100% { transform: rotate(45deg) translateX(100%); }
+  0% {
+    transform: rotate(45deg) translateX(-100%);
+  }
+
+  20% {
+    transform: rotate(45deg) translateX(100%);
+  }
+
+  100% {
+    transform: rotate(45deg) translateX(100%);
+  }
 }
 
 .price-card.popular {
@@ -658,18 +693,35 @@ li {
 }
 
 @keyframes heartbeat {
-  0% { transform: scale(1); }
-  15% { transform: scale(1.15); }
-  30% { transform: scale(1); }
-  45% { transform: scale(1.25); }
-  70% { transform: scale(1); }
-  100% { transform: scale(1); }
+  0% {
+    transform: scale(1);
+  }
+
+  15% {
+    transform: scale(1.15);
+  }
+
+  30% {
+    transform: scale(1);
+  }
+
+  45% {
+    transform: scale(1.25);
+  }
+
+  70% {
+    transform: scale(1);
+  }
+
+  100% {
+    transform: scale(1);
+  }
 }
 
 .price-footer-container {
   margin-top: 60px;
   padding: 60px 40px;
-  background: rgba(255, 255, 255, 0.2); 
+  background: rgba(255, 255, 255, 0.2);
   backdrop-filter: blur(25px);
   -webkit-backdrop-filter: blur(25px);
   border: 1px solid rgba(255, 255, 255, 0.3);
@@ -705,7 +757,7 @@ li {
 
 .footer-item p {
   font-size: 14px;
-  color: #3d2e25; 
+  color: #3d2e25;
   opacity: 0.9;
   line-height: 1.8;
 }
@@ -731,7 +783,7 @@ li {
   display: flex;
   align-items: center;
   gap: 15px;
-  background-color: var(--primary); 
+  background-color: var(--primary);
   color: #fff;
   padding: 18px 45px;
   border-radius: 50px;
@@ -744,24 +796,35 @@ li {
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   position: relative;
   overflow: hidden;
-  animation: cta-pulse 3s infinite; 
+  animation: cta-pulse 3s infinite;
 }
 
 .cta-button:hover {
   transform: translateY(-3px);
   box-shadow: 0 15px 40px rgba(83, 67, 59, 0.3);
-  background-color: #6d584d; 
+  background-color: #6d584d;
 }
 
 .cta-button:active {
-  transform: scale(0.95); 
+  transform: scale(0.95);
   box-shadow: 0 5px 15px rgba(83, 67, 59, 0.2);
 }
 
 @keyframes cta-pulse {
-  0% { transform: scale(1); box-shadow: 0 10px 30px rgba(83, 67, 59, 0.2); }
-  50% { transform: scale(1.03); box-shadow: 0 15px 45px rgba(83, 67, 59, 0.4); }
-  100% { transform: scale(1); box-shadow: 0 10px 30px rgba(83, 67, 59, 0.2); }
+  0% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(83, 67, 59, 0.2);
+  }
+
+  50% {
+    transform: scale(1.03);
+    box-shadow: 0 15px 45px rgba(83, 67, 59, 0.4);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 10px 30px rgba(83, 67, 59, 0.2);
+  }
 }
 
 .cta-icon {
@@ -1467,7 +1530,7 @@ li {
   letter-spacing: 1.5px;
   color: var(--primary);
   transition: all 0.3s ease;
-  position: relative; 
+  position: relative;
   white-space: nowrap;
 }
 
@@ -1481,7 +1544,7 @@ li {
 
 @media (max-width: 767px) {
   .pricing-tabs {
-    gap: 15px 8px; 
+    gap: 15px 8px;
     margin: 30px auto;
   }
 
@@ -1650,7 +1713,7 @@ li {
   -webkit-backdrop-filter: blur(20px);
   border-radius: 15px;
   border: 1px solid rgba(255, 255, 255, 0.3);
-  color: var(--white); 
+  color: var(--white);
   z-index: 10;
   transition: var(--transition);
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
@@ -1879,7 +1942,7 @@ li {
 
 .hero-minimal.has-image+.section .faq-container,
 .hero-minimal.has-image+.section .editorial-grid {
-  margin-top: 40px; 
+  margin-top: 40px;
   position: relative;
   z-index: 20;
 }
@@ -1897,7 +1960,7 @@ li {
 
   .hero-minimal.has-image+.section .faq-container,
   .hero-minimal.has-image+.section .editorial-grid {
-    margin-top: 20px; 
+    margin-top: 20px;
   }
 }
 
@@ -2415,7 +2478,7 @@ li {
 }
 
 .process-header h2 {
-  font-size: 24px; 
+  font-size: 24px;
   margin-top: 5px;
 }
 
@@ -2479,11 +2542,10 @@ li {
     left: 35px;
     bottom: 60px;
     width: 1px;
-    background: linear-gradient(to bottom, 
-      transparent, 
-      rgba(83, 67, 59, 0.15), 
-      transparent
-    );
+    background: linear-gradient(to bottom,
+        transparent,
+        rgba(83, 67, 59, 0.15),
+        transparent);
     z-index: 0;
   }
 

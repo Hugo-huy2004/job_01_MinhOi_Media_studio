@@ -629,14 +629,14 @@ li {
 .price-footer-container {
   margin-top: 80px;
   padding: 50px 40px;
-  background: #faf9f6; /* Matching Paper White */
-  border: 1px solid rgba(83, 67, 59, 0.1);
+  background: #32180291; /* Distinct Brown Pastel */
+  border: 1px solid rgba(83, 67, 59, 0.12);
   border-radius: 24px;
 }
 
 .price-footer-header h3 {
   font-family: var(--font-sans);
-  color: var(--primary);
+  color: #faf9f6;
   margin-bottom: 40px;
   font-size: 18px;
   text-transform: uppercase;
@@ -655,20 +655,20 @@ li {
   font-weight: 700;
   font-size: 15px;
   margin-bottom: 12px;
-  color: var(--primary);
+  color: #d4af37; /* Gold accent for headings on dark bg */
   letter-spacing: 1px;
 }
 
 .footer-item p {
   font-size: 14px;
-  color: var(--gray-medium);
+  color: rgba(255, 255, 255, 0.8);
   line-height: 1.8;
 }
 
 .note-highlight {
   margin-top: 15px;
   font-style: italic;
-  color: var(--primary) !important;
+  color: #faf9f6 !important;
   font-weight: 600;
 }
 

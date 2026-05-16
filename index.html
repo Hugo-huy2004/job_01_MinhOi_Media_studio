@@ -61,13 +61,13 @@
 
     <!-- Pricing Tabs -->
     <div class="pricing-tabs reveal">
-      <div class="pricing-tab active" data-tab="le">Gói Lẻ</div>
-      <div class="pricing-tab" data-tab="combo1">Combo 1 Ngày</div>
-      <div class="pricing-tab" data-tab="combo2">Combo 2 Ngày</div>
+      <div class="pricing-tab" data-tab="le">Gói Lẻ</div>
+      <div class="pricing-tab active" data-tab="combo1">Combo 1 Ngày <span class="tab-badge hot">HOT</span></div>
+      <div class="pricing-tab" data-tab="combo2">Combo 2 Ngày <span class="tab-badge premium">Premium</span></div>
     </div>
 
     <!-- Gói Lẻ Content -->
-    <div id="le" class="pricing-content active reveal">
+    <div id="le" class="pricing-content reveal">
       <div class="price-grid">
         <div class="price-card">
           <h3>Máy Chụp Truyền Thống</h3>
@@ -115,7 +115,7 @@
     </div>
 
     <!-- Combo 1 Ngày Content -->
-    <div id="combo1" class="pricing-content reveal">
+    <div id="combo1" class="pricing-content active reveal">
       <div class="price-grid">
         <div class="price-card popular">
           <h3>Gói Thanh Xuân</h3>
@@ -137,13 +137,7 @@
             <li>Phụ kiện đầy đủ chu đáo</li>
           </ul>
         </div>
-      </div>
-    </div>
-
-    <!-- Combo 2 Ngày Content -->
-    <div id="combo2" class="pricing-content reveal">
-      <div class="price-grid">
-        <div class="price-card popular">
+        <div class="price-card">
           <h3>Gói Thành Đôi</h3>
           <p class="price">16.400.000 VNĐ</p>
           <ul>
@@ -170,26 +164,61 @@
       </div>
     </div>
 
+    <!-- Combo 2 Ngày Content -->
+    <div id="combo2" class="pricing-content reveal">
+      <div class="price-grid">
+        <div class="price-card">
+          <h3>Gói Kim Cương</h3>
+          <p class="price">19.300.000 VNĐ</p>
+          <ul>
+            <li><strong>Lễ Vu Quy:</strong> 1 máy chụp truyền thống + suất giá</li>
+            <li><strong>Lễ Tân Hôn:</strong> 1 máy chụp phóng sự + 1 truyền thống + 1 quay truyền thống</li>
+            <li>200 ảnh in lụa + 2 cuốn album</li>
+            <li>Phim chất lượng 4K</li>
+          </ul>
+        </div>
+        <div class="price-card popular">
+          <h3>Gói Nữ Hoàng</h3>
+          <p class="price">26.800.000 VNĐ</p>
+          <ul>
+            <li><strong>Lễ Vu Quy:</strong> 1 máy chụp phóng sự + 1 quay truyền thống</li>
+            <li><strong>Lễ Tân Hôn:</strong> 1 máy chụp phóng sự (nhà gái) + 1 truyền thống (nhà trai) + 1 quay phóng sự
+              (nhà gái)</li>
+            <li>300 ảnh in lụa + 2 cuốn album</li>
+            <li>Takecare cô dâu chú rể chu đáo</li>
+          </ul>
+        </div>
+        <div class="price-card popular">
+          <h3>Gói Mình Ơi</h3>
+          <p class="price">46.600.000 VNĐ</p>
+          <ul>
+            <li>Thừa hưởng toàn bộ đặc quyền cao cấp</li>
+            <li><strong>Lễ Vu Quy:</strong> 1 chụp truyền thống + 1 chụp phóng sự + 1 quay phóng sự</li>
+            <li><strong>Lễ Tân Hôn:</strong> 1 truyền thống + 2 chụp phóng sự + 2 quay phóng sự + Flycam</li>
+            <li>400 ảnh in lụa + 2 album + 1 photobook 25x35</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
     <!-- Phụ Phí & Lưu Ý -->
-    <div class="price-footer reveal"
-      style="margin-top: 60px; padding: 40px; background: rgba(83, 67, 59, 0.03); border-radius: 4px;">
-      <h3
-        style="font-family: var(--font-sans); color: var(--primary); margin-bottom: 20px; font-size: 18px; text-transform: uppercase; letter-spacing: 2px;">
-        Lưu ý & Phụ phí</h3>
-      <div class="price-grid" style="grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px;">
-        <div>
-          <h4 style="margin-bottom: 10px; font-size: 16px;">Cam Kết Chất Lượng</h4>
-          <p class="text-small">Mọi gói dịch vụ đều bao gồm chỉnh sửa toàn bộ file (cân chỉnh bố cục, màu sắc, mịn da…) đảm bảo chất lượng hoàn hảo nhất.</p>
+    <div class="price-footer-container reveal">
+      <div class="price-footer-header">
+        <h3>Lưu ý & Phụ phí</h3>
+      </div>
+      <div class="price-footer-grid">
+        <div class="footer-item">
+          <h4>Cam Kết Chất Lượng</h4>
+          <p>Mọi gói dịch vụ đều bao gồm chỉnh sửa toàn bộ file (cân chỉnh bố cục, màu sắc, mịn da…) đảm bảo chất lượng hoàn hảo nhất.</p>
         </div>
-        <div>
-          <h4 style="margin-bottom: 10px; font-size: 16px;">Thời Gian Phục Vụ</h4>
-          <p class="text-small">Chụp/quay lễ tiệc sáng trưa đến 14h chiều cùng ngày.</p>
+        <div class="footer-item">
+          <h4>Thời Gian Phục Vụ</h4>
+          <p>Chụp/quay lễ tiệc sáng trưa đến 14h chiều cùng ngày.</p>
         </div>
-        <div>
-          <h4 style="margin-bottom: 10px; font-size: 16px;">Phụ Phí Phát Sinh</h4>
-          <p class="text-small">Phát sinh buổi / tiệc nhà hàng: Liên hệ tư vấn phụ phí.</p>
-          <p class="text-small" style="margin-top: 10px; color: var(--primary); font-style: italic;">* Giá trên chưa bao
-            gồm phí di chuyển ngoại tỉnh.</p>
+        <div class="footer-item">
+          <h4>Phụ Phí Phát Sinh</h4>
+          <p>Phát sinh buổi / tiệc nhà hàng: Liên hệ tư vấn phụ phí.</p>
+          <p class="note-highlight">* Giá trên chưa bao gồm phí di chuyển ngoại tỉnh.</p>
         </div>
       </div>
     </div>

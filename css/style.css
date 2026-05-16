@@ -398,7 +398,15 @@ li {
 
 /* Pricing Table */
 .price-section {
-  background-color: var(--white);
+  background: linear-gradient(-45deg, #fdfbf9, #fcf4f0, #f7f4f2, #faf9f6);
+  background-size: 400% 400%;
+  animation: liquid-bg 15s ease infinite;
+}
+
+@keyframes liquid-bg {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
 }
 
 .pricing-tab {
@@ -472,23 +480,27 @@ li {
 }
 
 .price-card {
-  background: #ffffff; /* Paper White */
+  background: rgba(255, 255, 255, 0.45); /* Liquid Glass Base */
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
   border-radius: 24px;
   padding: var(--spacing-xxl);
   display: flex;
   flex-direction: column;
-  transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   position: relative;
-  border: 1px solid rgba(83, 67, 59, 0.1); /* Subtle warm border */
+  border: 1px solid rgba(255, 255, 255, 0.5); /* Glass edge */
   overflow: visible;
-  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.04);
+  box-shadow: 
+    0 10px 40px rgba(83, 67, 59, 0.05),
+    inset 0 0 20px rgba(255, 255, 255, 0.2);
 }
 
 .price-card:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: var(--primary);
-  box-shadow: 0 15px 45px rgba(83, 67, 59, 0.1);
-  transform: translateY(-8px);
+  background: rgba(255, 255, 255, 0.65);
+  transform: translateY(-10px) scale(1.02);
+  border-color: rgba(255, 255, 255, 0.8);
+  box-shadow: 0 20px 50px rgba(83, 67, 59, 0.1);
 }
 
 .price-card h3 {
@@ -627,49 +639,58 @@ li {
 
 /* Price Footer Section */
 .price-footer-container {
-  margin-top: 80px;
-  padding: 50px 40px;
-  background: #85694f; /* Warm Medium Brown */
-  border: 1px solid rgba(83, 67, 59, 0.15);
+  margin-top: 60px;
+  padding: 60px 40px;
+  background: rgba(255, 255, 255, 0.2); /* Ultra Transparent */
+  backdrop-filter: blur(25px);
+  -webkit-backdrop-filter: blur(25px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: 24px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.02);
 }
 
 .price-footer-header h3 {
-  font-family: var(--font-sans);
-  color: #faf9f6;
-  margin-bottom: 40px;
-  font-size: 18px;
+  font-family: var(--font-serif);
+  color: var(--primary);
+  margin-bottom: 50px;
+  font-size: 20px;
   text-transform: uppercase;
-  letter-spacing: 3px;
+  letter-spacing: 5px;
   text-align: center;
+  opacity: 0.8;
 }
 
 .price-footer-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 40px;
+  gap: 50px;
 }
 
 .footer-item h4 {
-  font-family: var(--font-sans);
+  font-family: var(--font-serif);
   font-weight: 700;
-  font-size: 15px;
-  margin-bottom: 12px;
-  color: #faf9f6; /* Back to off-white for consistency */
-  letter-spacing: 1px;
+  font-size: 16px;
+  margin-bottom: 15px;
+  color: var(--primary);
+  letter-spacing: 0.5px;
 }
 
 .footer-item p {
   font-size: 14px;
-  color: rgba(255, 255, 255, 0.8);
+  color: #3d2e25; /* Darker text for contrast */
+  opacity: 0.9;
   line-height: 1.8;
 }
 
-.note-highlight {
-  margin-top: 15px;
+.price-footer-note {
+  margin-top: 50px;
+  text-align: center;
+  padding-top: 30px;
+  border-top: 1px solid rgba(83, 67, 59, 0.08);
   font-style: italic;
-  color: #faf9f6 !important;
-  font-weight: 600;
+  color: var(--primary);
+  opacity: 0.5;
+  font-size: 13px;
 }
 
 /* Consult CTA Button Styling */

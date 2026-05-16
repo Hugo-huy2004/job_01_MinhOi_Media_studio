@@ -617,11 +617,16 @@ li {
 
 /* Responsive */
 @media (max-width: 768px) {
-
-  .album-detail-grid.album-count-4,
-  .album-detail-grid.album-count-5,
-  .album-detail-grid.album-count-6 {
+  .album-detail-grid {
     grid-template-columns: 1fr !important;
+    grid-auto-rows: auto !important;
+    gap: 10px !important;
+  }
+
+  .album-detail-grid [class*="album-count-"],
+  .album-detail-grid .gallery-card {
+    grid-column: span 1 !important;
+    grid-row: span 1 !important;
   }
 }
 
@@ -1904,23 +1909,42 @@ li {
 }
 
 @media (max-width: 991px) {
+  .site-footer {
+    padding: 60px 0 30px;
+    margin-top: 60px;
+  }
+
   .footer-content {
     grid-template-columns: 1fr;
-    gap: 60px;
+    gap: 40px;
     text-align: center;
   }
   
   .footer-nav {
-    grid-template-columns: 1fr;
-    gap: 40px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    text-align: left;
+    max-width: 500px;
+    margin: 0 auto;
   }
   
+  .footer-column:last-child {
+    grid-column: span 2;
+    text-align: center;
+  }
+
   .footer-social {
     justify-content: center;
+    margin-top: 10px;
   }
   
   .footer-column a:hover {
     transform: none;
+  }
+
+  .footer-column h4 {
+    margin-bottom: 15px;
+    font-size: 11px;
   }
 }
 
@@ -1938,5 +1962,75 @@ li {
     height: 60px;
     margin: 0 auto 15px;
     display: block;
+  }
+}
+
+/* Refined Footer Branding */
+.footer-brand-title {
+  color: var(--white);
+  margin-bottom: 10px;
+}
+
+.brand-main {
+  font-family: var(--font-serif);
+  font-size: 42px;
+  display: block;
+}
+
+.brand-sub {
+  font-family: var(--font-sans);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 5px;
+  display: block;
+  opacity: 0.6;
+  margin-top: -5px;
+}
+
+@media (max-width: 767px) {
+  .site-footer {
+    padding: 40px 0 25px;
+  }
+  
+  .brand-main {
+    font-size: 28px; /* Much smaller */
+  }
+  
+  .brand-sub {
+    font-size: 10px;
+    letter-spacing: 3px;
+  }
+  
+  .footer-tagline {
+    font-size: 13px;
+    margin-bottom: 20px;
+  }
+  
+  .footer-content {
+    gap: 30px;
+  }
+  
+  .footer-nav {
+    gap: 20px;
+  }
+  
+  .footer-column h4 {
+    font-size: 10px;
+    margin-bottom: 12px;
+  }
+  
+  .footer-column a {
+    font-size: 13px;
+    margin-bottom: 8px;
+  }
+  
+  .footer-social a {
+    width: 35px;
+    height: 35px;
+  }
+  
+  .footer-bottom p {
+    font-size: 11px;
+    line-height: 1.5;
   }
 }

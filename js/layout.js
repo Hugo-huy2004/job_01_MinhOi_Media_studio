@@ -27,9 +27,9 @@ const layout = {
       <div class="container">
         <div class="footer-content">
           <div class="footer-brand">
-            <h2 class="brand-minh-oi" style="color: var(--white); margin-bottom: 5px;">
-              <span style="font-size: 42px;">Mình Ơi</span>
-              <span style="font-family: var(--font-sans); font-size: 14px; text-transform: uppercase; letter-spacing: 4px; display: block; opacity: 0.6; margin-top: -5px;">Media</span>
+            <h2 class="footer-brand-title">
+              <span class="brand-main">Mình Ơi</span>
+              <span class="brand-sub">Media</span>
             </h2>
             <p class="footer-tagline">Lưu giữ khoảnh khắc bằng cảm xúc thật.</p>
           </div>

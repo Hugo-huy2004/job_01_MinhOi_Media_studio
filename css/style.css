@@ -641,18 +641,17 @@ li {
   }
 }
 
-  .highlight-badge {
-    display: inline-block;
-    padding: 4px 12px;
-    background: var(--primary);
-    color: white;
-    font-size: 10px;
-    font-weight: 700;
-    text-transform: uppercase;
-    border-radius: 20px;
-    margin-bottom: 10px;
-    letter-spacing: 1px;
-  }
+.highlight-badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: var(--primary);
+  color: white;
+  font-size: 10px;
+  font-weight: 700;
+  text-transform: uppercase;
+  border-radius: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 1px;
 }
 
 @keyframes shine-ribbon-left {

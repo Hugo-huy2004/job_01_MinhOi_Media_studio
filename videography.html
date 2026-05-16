@@ -8,8 +8,67 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css" />
   <script src="js/layout.js"></script>
   <link rel="icon" type="image/png" href="favicon.png">
+  <style>
+    /* Plyr Custom Theme to match brand */
+    :root {
+      --plyr-color-main: #53433b;
+    }
+    .plyr {
+      border-radius: 24px;
+      overflow: hidden;
+      box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+      background: #000;
+    }
+    .video-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 50px;
+      margin-top: 50px;
+    }
+    .video-card {
+      position: relative;
+      height: auto !important; /* Reset fixed heights from photography */
+    }
+    .video-info-new {
+      padding: 25px 0;
+      text-align: left;
+    }
+    .video-info-new h3 {
+      font-family: 'Dancing Script', cursive;
+      font-size: 28px;
+      color: var(--primary);
+      margin-bottom: 5px;
+    }
+    .video-category {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-weight: 700;
+      opacity: 0.6;
+      color: var(--primary);
+      display: block;
+      margin-bottom: 8px;
+    }
+    
+    @media (max-width: 991px) {
+      .video-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    /* Override editorial grid for videos */
+    .video-card.card-large, 
+    .video-card.card-medium, 
+    .video-card.card-portrait {
+      grid-column: span 1 !important;
+      grid-row: span 1 !important;
+      height: auto !important;
+    }
+  </style>
 </head>
 <body>
 
@@ -18,7 +77,7 @@
   <section class="hero-minimal has-image">
     <img src="https://res.cloudinary.com/dyehwoscu/image/upload/v1778870440/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.40.32_vc2rlj.png" alt="Videography Background" class="hero-minimal-bg">
     <div class="container">
-      <div class="editorial-header reveal">
+      <div class="editorial-header">
         <span class="editorial-label">Cinematic Films</span>
         <h1 class="brand-minh-oi">Videography</h1>
         <div class="editorial-divider"></div>
@@ -30,57 +89,110 @@
   </section>
 
   <main class="container section">
-    <div class="editorial-grid reveal">
-      <!-- 1. Featured Film (Large) -->
-      <div class="video-item card-large">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/NCtdOi5efqs?modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+    <!-- Cinematic Philosophy Section -->
+    <div class="philosophy-section">
+      <span class="editorial-label">Our Philosophy</span>
+      <h2 class="brand-minh-oi" style="font-size: 32px; margin-bottom: 20px;">Hơn cả một thước phim</h2>
+      <p style="max-width: 700px; margin: 0 auto; line-height: 1.8; color: var(--gray-medium);">
+        Tại Mình Ơi Media, chúng tôi không chỉ quay phim, chúng tôi kể câu chuyện về sự kết nối. 
+        Mỗi thước phim phóng sự là sự đan xen giữa những nụ cười, giọt nước mắt hạnh phúc.
+      </p>
+    </div>
+
+    <div class="video-grid">
+      <!-- 1. Video -->
+      <div class="video-card">
+        <video class="js-player" playsinline controls preload="metadata" poster="assets/images/Logo.png">
+          <source src="assets/videos_compressed/14.06_psc_DAT_QUYEN_compressed.mp4" type="video/mp4">
+        </video>
+        <div class="video-info-new">
+          <span class="video-category">Wedding Highlight</span>
+          <h3>Đạt & Quyên</h3>
         </div>
       </div>
 
-      <!-- 2. Documentary Film (Medium) -->
-      <div class="video-item card-medium">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/cjec6tR4FlI?modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+      <!-- 2. Video -->
+      <div class="video-card">
+        <video class="js-player" playsinline controls preload="metadata">
+          <source src="assets/videos_compressed/Le_Vu_Quy_Bich_Tram_FINAL_UNDER100MB.mp4" type="video/mp4">
+        </video>
+        <div class="video-info-new">
+          <span class="video-category">Lễ Vu Quy</span>
+          <h3>Bích Trâm & Khánh Lâm</h3>
         </div>
       </div>
 
-      <!-- 3. Cinematic Film (Medium) -->
-      <div class="video-item card-medium">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/IGDjTgUuTHg?modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+      <!-- 3. Video -->
+      <div class="video-card">
+        <video class="js-player" playsinline controls preload="metadata">
+          <source src="assets/videos_compressed/Le_Tan_Hon_Khanh_Lam_FINAL_UNDER100MB.mp4" type="video/mp4">
+        </video>
+        <div class="video-info-new">
+          <span class="video-category">Lễ Tân Hôn</span>
+          <h3>Khánh Lâm & Bích Trâm</h3>
         </div>
       </div>
 
-      <!-- 4. Story Film (Portrait) -->
-      <div class="video-item card-portrait">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/0XnfsayBRYY?modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+      <!-- 4. Video -->
+      <div class="video-card">
+        <video class="js-player" playsinline controls preload="metadata">
+          <source src="assets/videos_compressed/6.4_PSC_Thanh_Truc__The_Viet_intro_compressed.mp4" type="video/mp4">
+        </video>
+        <div class="video-info-new">
+          <span class="video-category">Cinematic Intro</span>
+          <h3>Thanh Trúc & Thế Việt</h3>
         </div>
       </div>
 
-      <!-- 5. Wedding Film (Medium) -->
-      <div class="video-item card-medium">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/5-R2pXNuXIw?modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+      <!-- 5. Video -->
+      <div class="video-card">
+        <video class="js-player" playsinline controls preload="metadata">
+          <source src="assets/videos_compressed/4.10_SEO_STUDIO_2_compressed.mp4" type="video/mp4">
+        </video>
+        <div class="video-info-new">
+          <span class="video-category">Studio Highlight</span>
+          <h3>SEO Wedding</h3>
         </div>
       </div>
+    </div>
 
-      <!-- 6. Highlights Film (Medium) -->
-      <div class="video-item card-medium">
-        <div class="video-wrapper">
-          <iframe src="https://www.youtube.com/embed/8jiLNAOrIDY?modestbranding=1&rel=0" frameborder="0" allow="autoplay; encrypted-media; fullscreen" allowfullscreen></iframe>
+    <!-- Process Section to fill space -->
+    <div class="process-section section reveal" style="margin-top: 80px; border-top: 1px solid rgba(83, 67, 59, 0.1); padding-top: 80px;">
+      <div style="text-align: center; margin-bottom: 50px;">
+        <span class="editorial-label">The Process</span>
+        <h2 class="brand-minh-oi">Quy trình thực hiện</h2>
+      </div>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px;">
+        <div class="process-card" style="text-align: center; padding: 30px;">
+          <div style="font-family: var(--font-serif); font-size: 40px; color: var(--primary); opacity: 0.3; margin-bottom: 20px;">01</div>
+          <h4 style="margin-bottom: 15px; color: var(--primary);">Tư vấn ý tưởng</h4>
+          <p style="font-size: 14px; color: var(--gray-medium);">Lắng nghe câu chuyện tình yêu của bạn để tìm ra phong cách phim phù hợp nhất.</p>
+        </div>
+        <div class="process-card" style="text-align: center; padding: 30px;">
+          <div style="font-family: var(--font-serif); font-size: 40px; color: var(--primary); opacity: 0.3; margin-bottom: 20px;">02</div>
+          <h4 style="margin-bottom: 15px; color: var(--primary);">Ghi hình nghệ thuật</h4>
+          <p style="font-size: 14px; color: var(--gray-medium);">Sử dụng thiết bị hiện đại và góc quay điện ảnh để bắt trọn mọi cảm xúc.</p>
+        </div>
+        <div class="process-card" style="text-align: center; padding: 30px;">
+          <div style="font-family: var(--font-serif); font-size: 40px; color: var(--primary); opacity: 0.3; margin-bottom: 20px;">03</div>
+          <h4 style="margin-bottom: 15px; color: var(--primary);">Hậu kỳ chuyên nghiệp</h4>
+          <p style="font-size: 14px; color: var(--gray-medium);">Chỉnh màu cinematic và lồng ghép âm nhạc để tạo nên một tác phẩm hoàn mỹ.</p>
         </div>
       </div>
     </div>
   </main>
 
-
   <div id="footer-placeholder"></div>
 
+  <script src="https://cdn.plyr.io/3.7.8/plyr.js"></script>
   <script src="js/main.js"></script>
   <script>
     layout.inject('videography');
+    // Initialize all players
+    const players = Plyr.setup('.js-player', {
+      controls: ['play-large', 'play', 'progress', 'current-time', 'mute', 'volume', 'fullscreen'],
+      ratio: '16:9'
+    });
   </script>
 </body>
 </html>

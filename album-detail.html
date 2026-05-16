@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="vi">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,9 +8,12 @@
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;700&display=swap"
+    rel="stylesheet">
   <script src="js/layout.js"></script>
 </head>
+
 <body>
 
   <div id="header-placeholder"></div>
@@ -17,11 +21,15 @@
   <main class="container section">
     <div style="margin-bottom: 20px;">
       <a href="photography.html" class="back-link" style="margin-top: 0;">
-        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
         Quay lại Photography
       </a>
     </div>
-    
+
     <div class="price-header reveal">
       <h2 id="albumTitle">Wedding Album</h2>
       <p id="albumSub">Khoảnh khắc hạnh phúc của lứa đôi</p>
@@ -33,7 +41,11 @@
 
     <div style="text-align: center; margin-top: 60px;">
       <a href="photography.html" class="back-link">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="19" y1="12" x2="5" y2="12"></line><polyline points="12 19 5 12 12 5"></polyline></svg>
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+          stroke-linecap="round" stroke-linejoin="round">
+          <line x1="19" y1="12" x2="5" y2="12"></line>
+          <polyline points="12 19 5 12 12 5"></polyline>
+        </svg>
         Quay lại Photography
       </a>
     </div>
@@ -47,50 +59,50 @@
 
     // Mock Database for 12 Albums (72 images total)
     const albumData = {
-      "1": { 
-        name: "Cô Dâu Anh Thi", 
+      "1": {
+        name: "Cô Dâu Anh Thi",
         images: [
-          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867570/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.52.45_y3jgu2.png", 
-          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867585/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.53.00_eejfwb.png", 
-          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867624/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.53.27_h07cg3.png", 
-          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867639/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.53.40_mc8ugx.png", 
-          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867644/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.53.55_llrdom.png", 
+          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867570/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.52.45_y3jgu2.png",
+          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867585/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.53.00_eejfwb.png",
+          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867624/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.53.27_h07cg3.png",
+          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867639/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.53.40_mc8ugx.png",
+          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867644/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.53.55_llrdom.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867688/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.54.43_shcogv.png"
-        ] 
+        ]
       },
-      "2": { 
-        name: "Tuyền & Toàn", 
+      "2": {
+        name: "Tuyền & Toàn",
         images: [
-          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867798/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.56.26_crbg4y.png", 
-          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867952/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.58.47_cwvued.png", 
-          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867965/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.59.08_z3aqrq.png", 
-          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868008/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.00.03_f8xjlv.png", 
+          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867798/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.56.26_crbg4y.png",
+          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867952/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.58.47_cwvued.png",
+          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867965/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.59.08_z3aqrq.png",
+          "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868008/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.00.03_f8xjlv.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868021/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.00.16_aghjgg.png"
-        ] 
+        ]
       },
 
-      "3": { 
-        name: "Huỳnh & Khanh", 
+      "3": {
+        name: "Huỳnh & Khanh",
         images: [
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868256/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.04.04_bqmqoh.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868247/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.03.53_oynrd2.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868284/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.04.27_uslb1x.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868303/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.04.40_gc7xqq.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868307/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.04.59_gtc5yh.png"
-        ] 
+        ]
       },
-      "4": { 
-        name: "Nhi & Tú", 
+      "4": {
+        name: "Nhi & Tú",
         images: [
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868472/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.07.38_vb0vzj.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868494/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.07.47_w2yy7k.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868461/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.07.24_umuiot.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868434/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.06.59_scdpja.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868447/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.07.10_ytfgfo.png"
-        ] 
+        ]
       },
-      "5": { 
-        name: "Phượng & Tú", 
+      "5": {
+        name: "Phượng & Tú",
         images: [
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868683/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.11.14_swv3sn.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868679/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.10.59_rrn3sp.png",
@@ -99,8 +111,8 @@
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868634/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.10.18_gymlgo.png"
         ]
       },
-      "6": { 
-        name: "Huyền & Trâm", 
+      "6": {
+        name: "Huyền & Trâm",
         images: [
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778868752/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.12.23_u1weqz.png",
           "https://res.cloudinary.com/dyehwoscu/image/upload/v1778867570/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.52.45_y3jgu2.png",
@@ -112,8 +124,8 @@
     };
 
     // Fill missing data for demo
-    for(let i=3; i<=12; i++) {
-      if(!albumData[i]) albumData[i] = { name: `Cặp đôi #${i}`, images: albumData["1"].images };
+    for (let i = 3; i <= 12; i++) {
+      if (!albumData[i]) albumData[i] = { name: `Cặp đôi #${i}`, images: albumData["1"].images };
     }
 
     const params = new URLSearchParams(window.location.search);
@@ -123,7 +135,7 @@
     if (currentAlbum) {
       document.getElementById('albumTitle').innerText = currentAlbum.name;
       const grid = document.getElementById('albumGrid');
-      
+
       const quotes = [
         "Vì yêu mà đến, vì thương mà ở lại.",
         "Hạnh phúc là khi được cùng anh già đi.",
@@ -135,7 +147,7 @@
 
       currentAlbum.images.forEach((imgUrl, index) => {
         grid.innerHTML += `<div class="gallery-card"><img src="${imgUrl}" class="gallery-image"></div>`;
-        
+
         // Intersperse a quote at a strategic position (e.g., after the 2nd photo)
         if (index === 1) {
           const randomQuote = quotes[Math.floor(Math.random() * quotes.length)];
@@ -154,4 +166,5 @@
     }
   </script>
 </body>
+
 </html>

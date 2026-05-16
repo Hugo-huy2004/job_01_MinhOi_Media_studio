@@ -474,7 +474,8 @@ li {
 .price-card.popular::before {
   content: 'Best Choice';
   position: absolute;
-  top: -15px; /* Floating above the card */
+  top: -15px;
+  /* Floating above the card */
   left: 50%;
   transform: translateX(-50%);
   background: var(--primary);
@@ -488,7 +489,8 @@ li {
   box-shadow: 0 10px 20px rgba(83, 67, 59, 0.3);
   z-index: 10;
   border: 2px solid var(--white);
-  white-space: nowrap; /* Prevent B from getting cut by line breaks */
+  white-space: nowrap;
+  /* Prevent B from getting cut by line breaks */
 }
 
 .price-card.popular {
@@ -620,11 +622,11 @@ li {
   .album-detail-grid {
     grid-template-columns: 1fr !important;
     grid-auto-rows: auto !important;
-    gap: 10px !important;
+    gap: 15px !important;
   }
 
-  .album-detail-grid [class*="album-count-"],
-  .album-detail-grid .gallery-card {
+  .album-detail-grid .gallery-card,
+  .album-detail-grid[class*="album-count-"] .gallery-card {
     grid-column: span 1 !important;
     grid-row: span 1 !important;
   }
@@ -881,7 +883,8 @@ li {
     right: -100%;
     width: 75%;
     height: 100vh;
-    background: rgba(255, 255, 255, 0.1); /* High transparency */
+    background: rgba(255, 255, 255, 0.1);
+    /* High transparency */
     backdrop-filter: blur(30px);
     -webkit-backdrop-filter: blur(30px);
     flex-direction: column;
@@ -898,10 +901,14 @@ li {
   }
 
   .nav-link {
-    font-size: 22px; /* Even larger */
-    font-weight: 800; /* Extra bold */
-    color: var(--white) !important; /* White for brightness */
-    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4); /* Strong shadow to pop */
+    font-size: 22px;
+    /* Even larger */
+    font-weight: 800;
+    /* Extra bold */
+    color: var(--white) !important;
+    /* White for brightness */
+    text-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+    /* Strong shadow to pop */
     margin: 18px 0;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -1230,9 +1237,11 @@ li {
     text-align: center;
   }
 }
+
 /* Photography Editorial Gallery */
 .hero-minimal {
-  padding: 100px 0 160px; /* More padding bottom for overlap */
+  padding: 100px 0 160px;
+  /* More padding bottom for overlap */
   background: var(--bg-cream);
   text-align: center;
   position: relative;
@@ -1245,10 +1254,12 @@ li {
 }
 
 .editorial-header h1 {
-  font-size: clamp(2rem, 6vw, 3.5rem); /* Smaller size */
+  font-size: clamp(2rem, 6vw, 3.5rem);
+  /* Smaller size */
   margin: 0;
   line-height: 1.1;
-  color: var(--white) !important; /* Back to white as requested */
+  color: var(--white) !important;
+  /* Back to white as requested */
   text-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
@@ -1285,7 +1296,8 @@ li {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 25px;
-  margin-top: -100px; /* Overlap the header */
+  margin-top: -100px;
+  /* Overlap the header */
   position: relative;
   z-index: 10;
 }
@@ -1317,18 +1329,24 @@ li {
 
 .gallery-info-glass {
   position: absolute;
-  bottom: 20px;
-  left: 20px;
-  right: 20px;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(25px);
-  -webkit-backdrop-filter: blur(25px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  color: var(--primary);
-  z-index: 2;
+  bottom: 15px;
+  left: 15px;
+  right: 15px;
+  padding: 15px 20px;
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-radius: 15px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: var(--white); /* White text for better contrast on dark images */
+  z-index: 10;
   transition: var(--transition);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.gallery-info-glass h3 {
+  color: var(--white) !important;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
 }
 
 .card-category {
@@ -1380,22 +1398,28 @@ li {
 @media (max-width: 767px) {
   .editorial-grid {
     grid-template-columns: 1fr;
-    gap: 15px; /* Tighter gap */
-    margin-top: -60px; /* Reduced overlap for mobile */
+    gap: 15px;
+    /* Tighter gap */
+    margin-top: -60px;
+    /* Reduced overlap for mobile */
   }
-  
-  .card-large, .card-medium, .card-portrait {
+
+  .card-large,
+  .card-medium,
+  .card-portrait {
     grid-column: span 1;
     grid-row: span 1;
     height: auto !important;
   }
-  
+
   .hero-minimal {
-    padding: 80px 0 100px; /* Reduced padding */
+    padding: 80px 0 100px;
+    /* Reduced padding */
   }
 
   .hero-minimal.has-image {
-    height: 50vh; /* Consistent height */
+    height: 50vh;
+    /* Consistent height */
   }
 }
 
@@ -1487,12 +1511,12 @@ li {
     padding: 20px;
     font-size: 13px;
   }
-  
+
   .faq-answer-inner {
     padding: 0 20px 20px;
     font-size: 14px;
   }
-  
+
   .faq-icon-wrap {
     width: 28px;
     height: 28px;
@@ -1519,7 +1543,8 @@ li {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  opacity: 0.5; /* Slightly darker to make white text pop */
+  opacity: 0.5;
+  /* Slightly darker to make white text pop */
   filter: brightness(0.6);
 }
 
@@ -1547,9 +1572,9 @@ li {
 }
 
 /* Overlap adjustment for cinematic header */
-.hero-minimal.has-image + .section .faq-container,
-.hero-minimal.has-image + .section .editorial-grid {
-  margin-top: -60px;
+.hero-minimal.has-image+.section .faq-container,
+.hero-minimal.has-image+.section .editorial-grid {
+  margin-top: 40px; /* Changed from -60px to positive space */
   position: relative;
   z-index: 20;
 }
@@ -1558,16 +1583,16 @@ li {
   .hero-minimal.has-image {
     height: 60vh;
   }
-  
+
   .hero-minimal.has-image .editorial-header {
     padding: 30px;
     width: 90%;
     border-radius: 24px;
   }
-  
-  .hero-minimal.has-image + .section .faq-container,
-  .hero-minimal.has-image + .section .editorial-grid {
-    margin-top: -40px;
+
+  .hero-minimal.has-image+.section .faq-container,
+  .hero-minimal.has-image+.section .editorial-grid {
+    margin-top: 20px; /* More space on mobile too */
   }
 }
 
@@ -1796,20 +1821,20 @@ li {
     font-size: 1.1rem;
     letter-spacing: 3px;
   }
-  
+
   .philosophy-content {
     font-size: 14px;
     text-align: left;
   }
-  
+
   .contact-glass-card {
     padding: 25px;
   }
-  
+
   .map-frame-glass {
     height: 350px;
   }
-  
+
   .social-glass-links {
     justify-content: center;
   }
@@ -1919,7 +1944,7 @@ li {
     gap: 40px;
     text-align: center;
   }
-  
+
   .footer-nav {
     grid-template-columns: repeat(2, 1fr);
     gap: 30px;
@@ -1927,7 +1952,7 @@ li {
     max-width: 500px;
     margin: 0 auto;
   }
-  
+
   .footer-column:last-child {
     grid-column: span 2;
     text-align: center;
@@ -1937,7 +1962,7 @@ li {
     justify-content: center;
     margin-top: 10px;
   }
-  
+
   .footer-column a:hover {
     transform: none;
   }
@@ -1954,7 +1979,8 @@ li {
   width: auto;
   object-fit: contain;
   margin-bottom: 20px;
-  filter: brightness(0) invert(1); /* Ensure visibility on charcoal background if logo is dark */
+  filter: brightness(0) invert(1);
+  /* Ensure visibility on charcoal background if logo is dark */
 }
 
 @media (max-width: 767px) {
@@ -1991,46 +2017,88 @@ li {
   .site-footer {
     padding: 40px 0 25px;
   }
-  
+
   .brand-main {
-    font-size: 28px; /* Much smaller */
+    font-size: 28px;
+    /* Much smaller */
   }
-  
+
   .brand-sub {
     font-size: 10px;
     letter-spacing: 3px;
   }
-  
+
   .footer-tagline {
     font-size: 13px;
     margin-bottom: 20px;
   }
-  
+
   .footer-content {
     gap: 30px;
   }
-  
+
   .footer-nav {
     gap: 20px;
   }
-  
+
   .footer-column h4 {
     font-size: 10px;
     margin-bottom: 12px;
   }
-  
+
   .footer-column a {
     font-size: 13px;
     margin-bottom: 8px;
   }
-  
+
   .footer-social a {
     width: 35px;
     height: 35px;
   }
-  
+
   .footer-bottom p {
     font-size: 11px;
     line-height: 1.5;
+  }
+}
+/* Premium Video Player Optimization */
+.video-player {
+  width: 100%;
+  height: 100%;
+  background: var(--charcoal);
+  border-radius: 20px;
+  object-fit: cover;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+}
+
+.video-info {
+  padding: 20px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(15px);
+  border-radius: 0 0 20px 20px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  margin-top: -20px;
+  position: relative;
+  z-index: 5;
+}
+
+.video-info h3 {
+  font-family: var(--font-serif);
+  font-size: 18px;
+  color: var(--primary);
+  margin-bottom: 5px;
+}
+
+.video-tag {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  opacity: 0.6;
+  font-weight: 700;
+}
+
+@media (max-width: 767px) {
+  .video-info h3 {
+    font-size: 16px;
   }
 }

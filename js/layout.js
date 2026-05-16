@@ -33,7 +33,7 @@ const layout = {
             </h2>
             <p class="footer-tagline">Lưu giữ khoảnh khắc bằng cảm xúc thật.</p>
           </div>
-          
+
           <div class="footer-nav">
             <div class="footer-column">
               <h4>Quick Links</h4>
@@ -65,7 +65,7 @@ const layout = {
             </div>
           </div>
         </div>
-        
+
         <div class="footer-bottom">
           <p>© 2026 Mình Ơi Media. Crafted with love for your wedding story.</p>
           <p style="margin-top: 10px; font-size: 10px; opacity: 0.6;">
@@ -82,7 +82,6 @@ const layout = {
     if (headerPlaceholder) headerPlaceholder.innerHTML = layout.header(activePage);
     if (footerPlaceholder) footerPlaceholder.innerHTML = layout.footer;
 
-    // Re-initialize mobile menu toggle after injection
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     if (menuToggle && navLinks) {

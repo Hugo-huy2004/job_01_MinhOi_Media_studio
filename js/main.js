@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  // Hero Slider
+
   const slides = document.querySelectorAll('.hero-slide');
   if (slides.length > 0) {
     let currentSlide = 0;
@@ -10,22 +10,20 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 3000);
   }
 
-  // FAQ Accordion
   const faqItems = document.querySelectorAll('.faq-item');
   faqItems.forEach(item => {
     const question = item.querySelector('.faq-question');
     question.addEventListener('click', () => {
       const isOpen = item.classList.contains('open');
-      // Close all other items
+
       faqItems.forEach(otherItem => otherItem.classList.remove('open'));
-      // Toggle current item
+
       if (!isOpen) {
         item.classList.add('open');
       }
     });
   });
 
-  // Video Lightbox
   const videoCards = document.querySelectorAll('.gallery-card[data-video]');
   const videoOverlay = document.getElementById('videoOverlay');
   const videoIframe = document.getElementById('videoIframe');
@@ -47,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Scroll Reveal Animation
   const reveals = document.querySelectorAll('.reveal');
   if (reveals.length > 0) {
     const revealObserver = new IntersectionObserver((entries) => {
@@ -63,13 +60,11 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
-  // Ensure pricing grids start at the beginning on mobile
   const priceGrids = document.querySelectorAll('.price-grid');
   priceGrids.forEach(grid => {
     grid.scrollLeft = 0;
   });
 
-  // Pricing Tabs Logic
   const tabs = document.querySelectorAll('.pricing-tab');
   const contents = document.querySelectorAll('.pricing-content');
 
@@ -78,11 +73,9 @@ document.addEventListener('DOMContentLoaded', () => {
       tab.addEventListener('click', () => {
         const target = tab.getAttribute('data-tab');
 
-        // Update tabs
         tabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
 
-        // Update contents
         contents.forEach(content => {
           content.classList.remove('active');
           if (content.id === target) {

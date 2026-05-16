@@ -30,7 +30,7 @@
   </section>
 
   <main class="container section">
-    <!-- Studio Philosophy -->
+
     <div class="philosophy-section reveal">
       <div class="philosogram">
         <svg width="60" height="60" viewBox="0 0 100 100" fill="none">
@@ -48,7 +48,7 @@
     </div>
 
     <div class="contact-grid reveal">
-      <!-- Info Column -->
+
       <div class="contact-info-wrap">
         <div class="contact-glass-card">
           <div class="contact-header">
@@ -89,14 +89,13 @@
         </div>
       </div>
 
-      <!-- Map Column -->
       <div class="contact-map-wrap">
         <div class="branch-selector-glass">
           <div class="branch-tab active" data-branch="cn1">Long An</div>
           <div class="branch-tab" data-branch="cn2">Cần Đước</div>
           <div class="branch-tab" data-branch="cn3">Quận 8</div>
         </div>
-        
+
         <div class="address-display-glass">
           <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
           <span id="current-address">Ấp 5, xã Phước Đông, huyện Cần Đước, tỉnh Long An</span>
@@ -119,7 +118,7 @@
     const branchTabs = document.querySelectorAll('.branch-tab');
     const mapFrame = document.getElementById('googleMap');
     const addressText = document.getElementById('current-address');
-    
+
     const branchData = {
       'cn1': {
         address: 'Ấp 5, xã Phước Đông, huyện Cần Đước, tỉnh Long An',
@@ -140,7 +139,7 @@
         // Update tabs
         branchTabs.forEach(t => t.classList.remove('active'));
         tab.classList.add('active');
-        
+
         // Update map and address
         const branchKey = tab.getAttribute('data-branch');
         mapFrame.src = branchData[branchKey].mapUrl;

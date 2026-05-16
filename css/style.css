@@ -472,31 +472,19 @@ li {
 }
 
 .price-card.popular::before {
-  content: 'Best Choice';
+  content: '❤';
   position: absolute;
-  top: -15px;
-  /* Floating above the card */
-  left: 50%;
-  transform: translateX(-50%);
-  background: var(--primary);
-  color: var(--white);
-  padding: 8px 25px;
-  font-size: 12px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 2px;
-  border-radius: 50px;
-  box-shadow: 0 10px 20px rgba(83, 67, 59, 0.3);
-  z-index: 10;
-  border: 2px solid var(--white);
-  white-space: nowrap;
-  /* Prevent B from getting cut by line breaks */
+  top: -25px;
+  right: -25px;
+  font-size: 50px;
+  color: #800000; /* Deep Maroon */
+  z-index: 20;
+  text-shadow: 0 5px 15px rgba(0,0,0,0.3);
 }
 
 .price-card.popular {
-  border: 2px solid var(--primary);
-  box-shadow: 0 20px 45px rgba(83, 67, 59, 0.15);
-  background: rgba(255, 255, 255, 0.15);
+  border: 1px solid rgba(255, 255, 255, 0.15); /* Unified border */
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
 }
 
 /* Tablet / iPad Layout */

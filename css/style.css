@@ -525,13 +525,14 @@ li {
   color: var(--primary);
 }
 
+/* Popular Highlight System */
 .price-card.popular::before {
   content: '❤';
   position: absolute;
   top: -20px;
   left: -15px;
   font-size: 60px;
-  color: #800000; /* Deep Maroon */
+  color: #800000;
   z-index: 30;
   text-shadow: 
     2px 2px 0px #fff,
@@ -542,47 +543,77 @@ li {
   transition: var(--transition);
 }
 
-.price-card.popular {
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.05);
-}
-
-/* Tablet / iPad Layout */
-@media (min-width: 768px) and (max-width: 1199px) {
-  .price-grid {
-    grid-template-columns: repeat(2, 1fr);
-    gap: var(--spacing-lg);
+/* Tablet & Mobile: 3D Glossy "BEST CHOICE" Ribbon (Top-Left) */
+@media (max-width: 1199px) {
+  .price-card.popular {
+    overflow: hidden; /* Standard clipping for corner ribbons */
   }
 
-  .price-card {
-    padding: var(--spacing-xl);
-  }
-
-  .price-card .price {
-    font-size: 24px;
-  }
-}
-
-/* Mobile Specific Adjustments for Heart */
-@media (max-width: 767px) {
+  /* The Ribbon Wrapper */
   .price-card.popular::before {
-    top: -25px;
-    left: -10px;
-    font-size: 55px;
-    animation: heartbeat 1.5s ease-in-out infinite;
-    transform-origin: center;
-  }
-  
-  .price-grid {
-    padding: 20px 30px; /* More room for heart on mobile */
+    content: 'BEST CHOICE';
+    position: absolute;
+    top: 25px;
+    left: -40px; /* Offset for rotation */
+    width: 160px;
+    padding: 10px 0;
+    background: linear-gradient(135deg, #800000, #a52a2a);
+    color: white;
+    font-family: var(--font-sans);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-align: center;
+    transform: rotate(-45deg);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    text-shadow: none; /* Reset shadow from desktop heart */
+    z-index: 30;
+    border: none;
+    white-space: nowrap;
   }
 
-  .tab-badge {
-    font-size: 7px;
-    padding: 1px 6px;
-    top: -15px; /* Higher on mobile too */
-    right: -3px;
+  /* Glossy Sheen Effect */
+  .price-card.popular::after {
+    content: '';
+    position: absolute;
+    top: 25px;
+    left: -40px;
+    width: 160px;
+    height: 40px;
+    background: linear-gradient(
+      90deg, 
+      transparent, 
+      rgba(255, 255, 255, 0.3), 
+      transparent
+    );
+    transform: rotate(-45deg);
+    z-index: 31;
+    pointer-events: none;
+    animation: shine-ribbon-left 3s infinite;
   }
+}
+
+@keyframes shine-ribbon-left {
+  0% { transform: rotate(-45deg) translateX(-100%); }
+  20% { transform: rotate(-45deg) translateX(100%); }
+  100% { transform: rotate(-45deg) translateX(100%); }
+}
+
+/* Specific clipping for the ribbon to look like it wraps */
+.price-card.popular {
+  position: relative;
+}
+
+@keyframes shine-ribbon {
+  0% { transform: rotate(45deg) translateX(-100%); }
+  20% { transform: rotate(45deg) translateX(100%); }
+  100% { transform: rotate(45deg) translateX(100%); }
+}
+
+.price-card.popular {
+  border: 1px solid rgba(83, 67, 59, 0.15);
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.08);
 }
 
 @keyframes heartbeat {

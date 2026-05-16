@@ -538,6 +538,15 @@ li {
   margin-bottom: var(--spacing-lg);
 }
 
+.price-unit {
+  font-size: 14px;
+  vertical-align: super;
+  margin-left: 2px;
+  font-family: var(--font-sans);
+  font-weight: 700;
+  opacity: 0.8;
+}
+
 .price-card ul {
   margin-bottom: var(--spacing-xl);
   flex-grow: 1;

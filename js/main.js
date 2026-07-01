@@ -1,5 +1,95 @@
 document.addEventListener('DOMContentLoaded', () => {
 
+  if (window.lucide) {
+    window.lucide.createIcons();
+  }
+
+  const tiltCards = document.querySelectorAll('[data-tilt-card]');
+  const canHover = window.matchMedia('(hover: hover)').matches;
+  if (window.VanillaTilt && tiltCards.length > 0 && canHover) {
+    window.VanillaTilt.init(tiltCards, {
+      max: 5,
+      speed: 600,
+      glare: true,
+      'max-glare': 0.12,
+      scale: 1.01
+    });
+  }
+
+  const promoModal = document.getElementById('singlePromoModal');
+  if (promoModal) {
+    const promoCard = promoModal.querySelector('.promo-modal-card');
+    const closeButtons = promoModal.querySelectorAll('[data-promo-close]');
+
+    if (window.anime && promoCard) {
+      window.anime({
+        targets: promoCard,
+        opacity: [0, 1],
+        translateY: [28, 0],
+        scale: [0.94, 1],
+        duration: 720,
+        easing: 'easeOutCubic'
+      });
+    }
+
+    const closePromo = () => {
+      if (promoModal.classList.contains('is-hidden')) return;
+
+      if (window.anime && promoCard) {
+        window.anime({
+          targets: promoCard,
+          opacity: [1, 0],
+          translateY: [0, 18],
+          scale: [1, 0.96],
+          duration: 260,
+          easing: 'easeInCubic',
+          complete: () => promoModal.classList.add('is-hidden')
+        });
+      } else {
+        promoModal.classList.add('is-hidden');
+      }
+    };
+
+    closeButtons.forEach(button => {
+      button.addEventListener('click', closePromo);
+    });
+
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape') {
+        closePromo();
+      }
+    });
+  }
+
+  const singlesSection = document.querySelector('.pricing-section-singles');
+  if (window.anime && singlesSection) {
+    const promoElements = singlesSection.querySelectorAll('.single-service-item');
+    promoElements.forEach(element => {
+      element.style.opacity = '0';
+      element.style.transform = 'translateY(22px) scale(0.98)';
+    });
+
+    const promoObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        window.anime({
+          targets: promoElements,
+          opacity: [0, 1],
+          translateY: [22, 0],
+          scale: [0.98, 1],
+          delay: window.anime.stagger(85),
+          duration: 720,
+          easing: 'easeOutCubic'
+        });
+
+        observer.unobserve(entry.target);
+      });
+    }, { threshold: 0.22 });
+
+    promoObserver.observe(singlesSection);
+  }
+
   const slides = document.querySelectorAll('.hero-slide');
   if (slides.length > 0) {
     let currentSlide = 0;
@@ -65,24 +155,4 @@ document.addEventListener('DOMContentLoaded', () => {
     grid.scrollLeft = 0;
   });
 
-  const tabs = document.querySelectorAll('.pricing-tab');
-  const contents = document.querySelectorAll('.pricing-content');
-
-  if (tabs.length > 0) {
-    tabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const target = tab.getAttribute('data-tab');
-
-        tabs.forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-
-        contents.forEach(content => {
-          content.classList.remove('active');
-          if (content.id === target) {
-            content.classList.add('active');
-          }
-        });
-      });
-    });
-  }
 });

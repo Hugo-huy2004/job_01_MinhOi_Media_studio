@@ -29,7 +29,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
-    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Quicksand:wght@400;700&display=swap"
+    href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&amp;family=Quicksand:wght@400;700&amp;display=swap"
     rel="stylesheet">
   <link rel="icon" type="image/svg+xml"
     href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='45' fill='%2353433B'/%3E%3Ctext x='50' y='65' font-family='serif' font-size='60' fill='white' text-anchor='middle'%3EM%3C/text%3E%3C/svg%3E">
@@ -37,11 +37,30 @@
   <!-- Performance -->
   <link rel="preconnect" href="https://res.cloudinary.com">
   <meta http-equiv="x-dns-prefetch-control" content="on">
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vanilla-tilt@1.8.1/dist/vanilla-tilt.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/animejs@3.2.2/lib/anime.min.js"></script>
 </head>
 
 <body>
 
   <div id="header-placeholder"></div>
+
+  <div class="promo-modal" id="singlePromoModal" role="dialog" aria-labelledby="singlePromoTitle">
+    <div class="promo-modal-backdrop" data-promo-close></div>
+    <div class="promo-modal-card" data-tilt-card>
+      <button class="promo-modal-close" type="button" aria-label="Đóng quảng cáo" data-promo-close>
+        <span data-lucide="x">Đóng</span>
+      </button>
+      <span class="promo-modal-kicker">Một lời nhắn nhỏ</span>
+      <h2 id="singlePromoTitle">Ngày thương nhau, mình kể cho thật đẹp nhé</h2>
+      <p>Bắt đầu từ một lựa chọn thật vừa vặn, rồi để Mình Ơi cùng bạn giữ lại những khoảnh khắc khiến hai người mỉm cười mãi về sau.</p>
+      <div class="promo-modal-actions">
+        <a href="#single-packages-title" class="promo-modal-link promo-modal-link-primary" data-promo-close>Xem điều vừa vặn</a>
+        <a href="https://m.me/61577268082387" target="_blank" class="promo-modal-link">Nhắn Mình Ơi</a>
+      </div>
+    </div>
+  </div>
 
   <section class="hero">
     <div class="hero-slider">
@@ -79,227 +98,158 @@
       <h2>Bảng Giá</h2>
     </div>
 
-    <div class="pricing-tabs reveal">
-      <div class="pricing-tab" data-tab="le">Gói Lẻ</div>
-      <div class="pricing-tab active" data-tab="combo1">Combo 1 Ngày <span class="tab-badge hot">HOT</span></div>
-      <div class="pricing-tab" data-tab="combo2">Combo 2 Ngày <span class="tab-badge premium">Premium</span></div>
+    <div class="pricing-intro reveal">
+      <p>Mỗi câu chuyện cưới đều có một cách bắt đầu rất riêng. Bạn có thể chọn điều vừa vặn hôm nay, rồi để Mình Ơi
+        cùng nâng niu những khoảnh khắc đáng nhớ nhất.</p>
     </div>
 
-    <div id="le" class="pricing-content reveal">
-      <div class="price-grid">
-        <div class="price-card">
-          <h3>Máy Chụp Truyền Thống</h3>
-          <p class="price">4.000.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li>Chụp ngay thẳng, cổng, backdrop, lễ tiệc</li>
-            <li>100 ảnh in lụa cao cấp</li>
-            <li>01 Album ảnh</li>
-            <li>Chỉnh sửa toàn bộ file (cân chỉnh bố cục, màu sắc, mịn da…)</li>
-          </ul>
+    <section class="pricing-section pricing-section-singles reveal" aria-labelledby="single-packages-title">
+      <div class="pricing-section-heading">
+        <span>Gói lẻ</span>
+        <h3 id="single-packages-title">Những điều nhỏ làm ngày cưới dịu dàng hơn</h3>
+      </div>
+
+      <div class="single-service-board">
+        <div class="single-service-item single-service-item-lowest single-service-compact" data-tilt-card>
+          <div class="single-service-icon">
+            <span data-lucide="plane">Flycam</span>
+          </div>
+          <div class="single-service-main">
+            <span class="single-service-tag">Giá thấp nhất</span>
+            <h3>Flycam</h3>
+            <p>Một góc nhìn từ trên cao để ngày vui của hai bạn rộng hơn, đẹp hơn và có thêm chút mộng mơ.</p>
+          </div>
+          <div class="single-service-price">3.000.000 <span>VNĐ</span></div>
         </div>
-        <div class="price-card">
-          <h3>Máy Quay Truyền Thống</h3>
-          <p class="price">5.000.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li>Thời gian: 30 phút đến 1 tiếng</li>
-            <li>Ghi lại toàn bộ diễn biến buổi lễ</li>
-          </ul>
+
+        <div class="single-service-item single-service-compact" data-tilt-card>
+          <div class="single-service-icon">
+            <span data-lucide="sparkles">Lễ riêng</span>
+          </div>
+          <div class="single-service-main">
+            <span class="single-service-tag">Nghi thức riêng</span>
+            <h3>Lễ Xuất Giá</h3>
+            <p>Khoảnh khắc rời vòng tay gia đình được giữ lại nhẹ nhàng bằng ảnh hoặc phim, để sau này nhìn lại vẫn thấy thương.</p>
+          </div>
+          <div class="single-service-price single-service-contact">Liên hệ tư vấn</div>
         </div>
-        <div class="price-card">
-          <h3>Máy Chụp Phóng Sự</h3>
-          <p class="price">6.000.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li>Bắt trọn khoảnh khắc cảm xúc</li>
-            <li>100 ảnh in lụa cao cấp</li>
-            <li>01 Album ảnh</li>
-            <li>Chỉnh sửa toàn bộ file (cân chỉnh bố cục, màu sắc, mịn da…)</li>
-          </ul>
+
+        <div class="single-service-item" data-tilt-card>
+          <div class="single-service-icon">
+            <span data-lucide="camera">Chụp</span>
+          </div>
+          <div class="single-service-main">
+            <span class="single-service-tag">Ảnh truyền thống</span>
+            <h3>Máy Chụp Truyền Thống</h3>
+            <p>Những tấm hình đủ đầy bên gia đình, bạn bè và bàn tiệc, gói lại thành 100 ảnh in lụa cùng một album nhỏ xinh.</p>
+          </div>
+          <div class="single-service-price">4.000.000 <span>VNĐ</span></div>
         </div>
-        <div class="price-card">
-          <h3>Máy Quay Phóng Sự</h3>
-          <p class="price">7.000.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li>Thời gian: 4 phút đến 8 phút</li>
-            <li>Chất lượng 4K đỉnh cao</li>
-          </ul>
+
+        <div class="single-service-item" data-tilt-card>
+          <div class="single-service-icon">
+            <span data-lucide="video">Quay</span>
+          </div>
+          <div class="single-service-main">
+            <span class="single-service-tag">Phim truyền thống</span>
+            <h3>Máy Quay Truyền Thống</h3>
+            <p>Một thước phim dài để ba mẹ, họ hàng và hai bạn có thể xem lại trọn vẹn từng nghi thức thân thương.</p>
+          </div>
+          <div class="single-service-price">5.000.000 <span>VNĐ</span></div>
         </div>
-        <div class="price-card">
-          <h3>Flycam</h3>
-          <p class="price">3.000.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li>Góc quay toàn cảnh từ trên cao</li>
-            <li>Tăng tính chuyên nghiệp cho phim cưới</li>
-          </ul>
+
+        <div class="single-service-item" data-tilt-card>
+          <div class="single-service-icon">
+            <span data-lucide="aperture">Phóng sự ảnh</span>
+          </div>
+          <div class="single-service-main">
+            <span class="single-service-tag">Ảnh phóng sự</span>
+            <h3>Máy Chụp Phóng Sự</h3>
+            <p>Dành cho những cái nắm tay, ánh nhìn và nụ cười bất chợt. Kèm 100 ảnh in lụa, một album và file chỉnh sửa kỹ.</p>
+          </div>
+          <div class="single-service-price">6.000.000 <span>VNĐ</span></div>
         </div>
-        <div class="price-card">
-          <h3>Lễ Xuất Giá</h3>
-          <p class="price" style="font-size: 20px;">Liên hệ tư vấn</p>
-          <ul>
-            <li><strong>Chụp ảnh (1.000.000 <span class="price-unit">VNĐ</span>):</strong> Ghi dấu khoảnh khắc xuất gia
-              thiêng liêng.</li>
-            <li><strong>Quay phim (2.000.000 <span class="price-unit">VNĐ</span>):</strong> Thước phim chất lượng 4K
-              trọn vẹn nghi thức.</li>
-            <li>Hậu kỳ kỹ lưỡng, tối ưu hóa màu sắc chuyên nghiệp.</li>
-          </ul>
+
+        <div class="single-service-item" data-tilt-card>
+          <div class="single-service-icon">
+            <span data-lucide="clapperboard">Phóng sự phim</span>
+          </div>
+          <div class="single-service-main">
+            <span class="single-service-tag">Phim phóng sự</span>
+            <h3>Máy Quay Phóng Sự</h3>
+            <p>Một bộ phim ngắn 4-8 phút, kể lại ngày cưới bằng những điều thật nhất và mềm nhất của hai bạn.</p>
+          </div>
+          <div class="single-service-price">7.000.000 <span>VNĐ</span></div>
         </div>
       </div>
-    </div>
+    </section>
 
-    <div id="combo1" class="pricing-content active reveal">
-      <div class="price-grid">
-        <div class="price-card">
-          <h3>Gói Đôi Mình</h3>
-          <p class="price">8.800.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li>01 Máy chụp truyền thống</li>
-            <li>01 Máy quay truyền thống</li>
-            <li>100 ảnh in lụa cao cấp</li>
-            <li>01 Album ảnh</li>
-            <li>Chỉnh sửa toàn bộ file (cân chỉnh bố cục - màu sắc - mịn da…)</li>
+    <section class="pricing-section pricing-section-secondary reveal" aria-labelledby="main-packages-title">
+      <div class="pricing-section-heading">
+        <span>Combo trọn gói</span>
+        <h3 id="main-packages-title">Khi muốn ngày vui được kể trọn vẹn hơn</h3>
+      </div>
+
+      <div class="package-grid">
+        <div class="price-card package-card">
+          <span class="package-eyebrow">Vừa vặn để bắt đầu</span>
+          <h3>Gói Phu Thê</h3>
+          <p class="price">13.000.000 <span class="price-unit">VNĐ</span></p>
+          <p class="package-value">Một lựa chọn gọn ghẽ cho hai phần lễ, đủ ảnh đẹp, đủ album để gia đình cùng giữ lại.</p>
+          <ul class="package-list">
+            <li class="price-header"><strong>Vu Quy</strong></li>
+            <li>01 máy chụp truyền thống</li>
+            <li class="price-header"><strong>Tân Hôn</strong></li>
+            <li>01 máy chụp truyền thống (nhà trai)</li>
+            <li>01 máy chụp phóng sự (nhà gái)</li>
+            <li class="price-header package-benefit-title"><strong>Sản phẩm nhận được</strong></li>
+            <li class="package-benefit-item">250 ảnh in lụa cao cấp</li>
+            <li class="package-benefit-item">02 album ảnh</li>
           </ul>
         </div>
-        <div class="price-card popular">
+
+        <div class="price-card package-card popular package-card-featured">
+          <span class="package-eyebrow">Thêm một phần yêu thương</span>
           <h3>Gói Trầu Cao</h3>
-          <p class="price">9.300.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li>01 Máy chụp truyền thống</li>
-            <li>01 Máy chụp phóng sự</li>
-            <li>150 ảnh in lụa cao cấp</li>
-            <li>01 Album ảnh</li>
-            <li>Chỉnh sửa toàn bộ file (cân chỉnh bố cục - màu sắc - mịn da…)</li>
+          <p class="price">24.000.000 <span class="price-unit">VNĐ</span></p>
+          <p class="package-value">Khi bạn muốn không chỉ có ảnh, mà còn có tiếng cười, lời chúc và không khí ngày cưới được lưu lại.</p>
+          <ul class="package-list">
+            <li class="price-header"><strong>Vu Quy</strong></li>
+            <li>01 máy chụp phóng sự</li>
+            <li>01 máy quay truyền thống</li>
+            <li class="price-header"><strong>Tân Hôn</strong></li>
+            <li>01 máy chụp truyền thống (nhà trai)</li>
+            <li>01 máy quay truyền thống (nhà trai)</li>
+            <li>01 máy chụp phóng sự (nhà gái)</li>
+            <li class="price-header package-benefit-title"><strong>Sản phẩm nhận được</strong></li>
+            <li class="package-benefit-item">250 ảnh in lụa cao cấp</li>
+            <li class="package-benefit-item">02 album ảnh</li>
           </ul>
         </div>
-        <div class="price-card">
-          <h3>Gói Vàng (Chụp / Quay)</h3>
-          <p class="price">12.500.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li>01 Máy chụp phóng sự + Quay phóng sự</li>
-            <li>100 ảnh in lụa cao cấp</li>
-            <li>01 Album ảnh</li>
-            <li>Phim phóng sự cưới (4-8 phút) chuẩn 4K</li>
-            <li>Hình ảnh chỉnh sửa kỹ lưỡng</li>
-            <li>Phụ kiện đầy đủ, chu đáo</li>
-            <li>Chăm sóc tận tâm trước - trong - sau tiệc</li>
-          </ul>
-        </div>
-        <div class="price-card popular">
-          <h3>Gói Thành Đôi</h3>
-          <p class="price">13.900.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li>01 Máy chụp truyền thống</li>
-            <li>01 Máy chụp phóng sự</li>
-            <li>01 Máy quay truyền thống</li>
-            <li>130 ảnh in lụa cao cấp</li>
-            <li>01 Album ảnh</li>
-            <li>Phim truyền thống dài 30p - 1h chất lượng 4K</li>
-            <li>Chỉnh sửa toàn bộ file (cân chỉnh bố cục - màu sắc - mịn da…)</li>
-          </ul>
-        </div>
-        <div class="price-card popular">
-          <h3>Gói Thành Hôn</h3>
-          <p class="price">19.900.000 <span class="price-unit">VNĐ</span></p>
-          <p class="text-small" style="margin-top: -10px; margin-bottom: 15px; font-style: italic;">(Quay chụp phóng sự
-            kết tinh tình yêu)</p>
-          <ul>
-            <li>01 Máy chụp truyền thống</li>
-            <li>01 Máy chụp phóng sự</li>
-            <li>01 Máy quay truyền thống</li>
-            <li>01 Máy quay phóng sự</li>
-            <li>150 ảnh in lụa cao cấp</li>
-            <li>01 Album ảnh</li>
-            <li>01 Ảnh in gia đình 40x60</li>
-            <li>Phim chất lượng 4K đỉnh cao</li>
-          </ul>
-        </div>
-      </div>
-    </div>
 
-    <div id="combo2" class="pricing-content reveal">
-      <div class="price-grid">
-        <div class="price-card popular">
-          <h3>Gói Phu Thê </h3>
-          <p class="price">13.200.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li class="price-header"><strong>Lễ Vu Quy:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Truyền thống</li>
-            <li class="price-header" style="margin-top: 15px;"><strong>Lễ Tân Hôn:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Phóng sự (nhà gái)</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Truyền thống (nhà trai)</li>
-            <li class="price-header" style="margin-top: 15px;"><strong>Sản phẩm:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">250 ảnh in lụa cao cấp & 02 Album</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">Hình ảnh chỉnh sửa kỹ lưỡng</li>
-          </ul>
-          <p style="font-style: italic; opacity: 0.8; font-size: 0.85em; text-align: center; margin-top: 15px;">(Đã bao
-            gồm lễ Xuất giá)</p>
-        </div>
-        <div class="price-card">
-          <h3>Gói Kim Cương</h3>
-          <p class="price">19.300.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li class="price-header"><strong>Lễ Vu Quy:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Truyền thống</li>
-            <li class="price-header" style="margin-top: 15px;"><strong>Lễ Tân Hôn:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Phóng sự</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Truyền thống</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy quay Truyền thống</li>
-            <li class="price-header" style="margin-top: 15px;"><strong>Sản phẩm:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">250 ảnh in lụa cao cấp & 02 Album</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">Hình ảnh chỉnh sửa kỹ lưỡng</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">Phim chất lượng 4K</li>
-          </ul>
-          <p style="font-style: italic; opacity: 0.8; font-size: 0.85em; text-align: center; margin-top: 15px;">(Đã bao
-            gồm lễ Xuất giá)</p>
-        </div>
-        <div class="price-card popular">
-          <h3>Gói Nữ Hoàng</h3>
-          <p class="price">26.800.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li class="price-header"><strong>Lễ Vu Quy:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Phóng sự</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy quay Truyền thống</li>
-            <li class="price-header" style="margin-top: 15px;"><strong>Lễ Tân Hôn:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Phóng sự (nhà gái)</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Truyền thống (nhà trai)</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy quay Phóng sự (nhà gái)</li>
-            <li class="price-header" style="margin-top: 15px;"><strong>Sản phẩm:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">300 ảnh in lụa cao cấp & 02 Album</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">Hình ảnh chỉnh sửa kỹ lưỡng</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">Take-care Cô dâu & Chú rể chu đáo</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">Phim chất lượng 4K</li>
-          </ul>
-          <p style="font-style: italic; opacity: 0.8; font-size: 0.85em; text-align: center; margin-top: 15px;">(Đã bao
-            gồm lễ Xuất giá)</p>
-        </div>
-        <div class="price-card popular">
+        <div class="price-card package-card package-card-premium">
+          <span class="package-eyebrow">Để thương nhớ thật lâu</span>
           <h3>Gói Mình Ơi</h3>
-          <p class="price">46.600.000 <span class="price-unit">VNĐ</span></p>
-          <ul>
-            <li class="price-header" style="color: var(--primary); margin-bottom: 15px;">Thừa hưởng toàn bộ đặc quyền
-              cao cấp bên mình</li>
-            <li class="price-header"><strong>Lễ Vu Quy:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Truyền thống</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Phóng sự</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy quay Phóng sự</li>
-            <li class="price-header" style="margin-top: 15px;"><strong>Lễ Tân Hôn:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Máy chụp Truyền thống</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">02 Máy chụp Phóng sự</li>
-            <li class="price-header" style="margin-top: 15px;"><strong>Quay Phóng sự:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 máy nhà trai</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 máy nhà gái</li>
-            <li class="price-header" style="margin-top: 15px;"><strong>Đặc quyền đi kèm:</strong></li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">Flycam: Quay phim toàn cảnh</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">400 ảnh in lụa cao cấp</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">02 Album cao cấp</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 Photobook 25x35 cao cấp</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">01 ảnh gia đình 40x60 cao cấp</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">Take-care Cô dâu & Chú rể chu đáo</li>
-            <li style="padding-left: 20px; list-style: none; opacity: 0.9;">Phim 4K chất lượng & tràn đầy cảm xúc</li>
+          <p class="price">29.000.000 <span class="price-unit">VNĐ</span></p>
+          <p class="text-small package-subtitle">(Quay chụp phóng sự)</p>
+          <p class="package-value">Dành cho ngày cưới mà từng ánh mắt, từng cái ôm và từng lời chúc đều xứng đáng được kể bằng phóng sự.</p>
+          <ul class="package-list">
+            <li class="price-header"><strong>Vu Quy</strong></li>
+            <li>01 máy chụp phóng sự</li>
+            <li class="price-header"><strong>Tân Hôn - Nhà gái</strong></li>
+            <li>01 máy chụp phóng sự</li>
+            <li>01 máy quay phóng sự</li>
+            <li class="price-header"><strong>Tân Hôn - Nhà trai</strong></li>
+            <li>01 máy chụp phóng sự</li>
+            <li>01 máy quay phóng sự</li>
+            <li class="price-header package-benefit-title"><strong>Sản phẩm & đặc quyền</strong></li>
+            <li class="package-benefit-item">300 ảnh in lụa cao cấp</li>
+            <li class="package-benefit-item">02 album ảnh</li>
+            <li class="package-benefit-item package-benefit-premium">Thừa hưởng toàn bộ đặc quyền cao cấp bên mình</li>
           </ul>
-          <p style="font-style: italic; opacity: 0.8; font-size: 0.85em; text-align: center; margin-top: 15px;">(Đã bao
-            gồm lễ Xuất giá)</p>
         </div>
       </div>
-    </div>
+    </section>
 
     <div class="consult-cta reveal">
       <a href="https://m.me/61577268082387" target="_blank" class="cta-button">

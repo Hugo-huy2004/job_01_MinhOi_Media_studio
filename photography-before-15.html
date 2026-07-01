@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+
+<html lang="vi"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Dev.Architect Portfolio</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&amp;family=Quicksand:wght@500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-container-high": "#ece7e9",
+                        "on-tertiary-fixed": "#2d004f",
+                        "error-container": "#ffdad6",
+                        "outline": "#87717c",
+                        "tertiary-container": "#c989ff",
+                        "inverse-primary": "#ffaedc",
+                        "on-secondary-fixed-variant": "#004d62",
+                        "error": "#ba1a1a",
+                        "secondary-container": "#0fceff",
+                        "on-background": "#1d1b1d",
+                        "on-secondary-fixed": "#001f29",
+                        "tertiary-fixed": "#f1daff",
+                        "on-tertiary-container": "#5a0095",
+                        "on-primary-fixed-variant": "#880068",
+                        "surface-container-low": "#f8f2f4",
+                        "primary-container": "#ff71ce",
+                        "on-secondary": "#ffffff",
+                        "secondary-fixed-dim": "#58d5ff",
+                        "background": "#fef8fa",
+                        "on-primary": "#ffffff",
+                        "secondary-fixed": "#b9eaff",
+                        "surface-variant": "#e7e1e3",
+                        "tertiary-fixed-dim": "#dfb7ff",
+                        "surface-container": "#f2ecee",
+                        "outline-variant": "#dabfcc",
+                        "tertiary": "#852fca",
+                        "primary-fixed": "#ffd8eb",
+                        "on-primary-container": "#730058",
+                        "on-surface": "#1d1b1d",
+                        "on-tertiary-fixed-variant": "#6b00b0",
+                        "surface-dim": "#ded9db",
+                        "on-primary-fixed": "#3b002c",
+                        "on-tertiary": "#ffffff",
+                        "secondary": "#006781",
+                        "on-surface-variant": "#54414b",
+                        "on-error": "#ffffff",
+                        "primary-fixed-dim": "#ffaedc",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#f5eff1",
+                        "surface-tint": "#a72683",
+                        "surface": "#fef8fa",
+                        "on-error-container": "#93000a",
+                        "surface-container-highest": "#e7e1e3",
+                        "inverse-surface": "#323031",
+                        "primary": "#a72683",
+                        "on-secondary-container": "#00546a",
+                        "surface-bright": "#fef8fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "1rem",
+                        "lg": "2rem",
+                        "xl": "3rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "base-unit": "8px",
+                        "stack-gap": "1rem",
+                        "gutter": "1.5rem",
+                        "container-padding-lg": "3rem",
+                        "container-padding-sm": "1.5rem"
+                    },
+                    "fontFamily": {
+                        "display-lg": ["Quicksand"],
+                        "headline-lg": ["Quicksand"],
+                        "headline-lg-mobile": ["Quicksand"],
+                        "body-lg": ["Plus Jakarta Sans"],
+                        "body-md": ["Plus Jakarta Sans"],
+                        "label-md": ["Quicksand"]
+                    },
+                    "fontSize": {
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "500" }],
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "500" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "fontWeight": "600" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 1, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        
+        .clay-card {
+            background: linear-gradient(145deg, #ffffff, #f2ecee);
+            box-shadow: 20px 20px 60px #ded9db, -20px -20px 60px #ffffff;
+            border: 2px solid #ffffff;
+        }
+        
+        .clay-btn-primary {
+            box-shadow: inset 2px 2px 5px rgba(255,255,255,0.5), inset -2px -2px 5px rgba(0,0,0,0.1), 0 8px 15px rgba(167, 38, 131, 0.2);
+        }
+        
+        .clay-btn-secondary {
+            box-shadow: inset 2px 2px 5px rgba(255,255,255,0.5), inset -2px -2px 5px rgba(0,0,0,0.1), 0 8px 15px rgba(0, 103, 129, 0.2);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen overflow-x-hidden selection:bg-primary-container selection:text-on-primary-container">
+<!-- TopAppBar -->
+<header class="w-full rounded-b-xl px-gutter py-4 sticky top-0 z-50 bg-background/80 dark:bg-background/80 backdrop-blur-md border-b-4 border-primary-container dark:border-primary shadow-[0_8px_0_0_rgba(167,38,131,0.2)]">
+<div class="flex justify-between items-center max-w-7xl mx-auto">
+<div class="font-display-lg text-headline-lg text-primary dark:text-primary-fixed tracking-tight">DevBubble</div>
+<!-- Desktop Nav -->
+<nav class="hidden md:flex items-center gap-2">
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors px-4 py-1 hover:scale-105 duration-200 ease-out" href="#about">Projects</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors px-4 py-1 hover:scale-105 duration-200 ease-out" href="#skills">Skills</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors px-4 py-1 hover:scale-105 duration-200 ease-out" href="#blog">Blog</a>
+<a class="text-on-surface-variant font-medium hover:text-primary transition-colors px-4 py-1 hover:scale-105 duration-200 ease-out" href="#contact">Contact</a>
+</nav>
+<button class="hidden md:block bg-primary text-on-primary font-label-md px-6 py-3 rounded-full clay-btn-primary hover:scale-105 transition-transform duration-200 ease-out">
+                Hire Me!
+            </button>
+</div>
+</header>
+<main class="max-w-7xl mx-auto px-gutter pb-32 md:pb-16 pt-8 space-y-24">
+<!-- Hero Section -->
+<section class="flex flex-col md:flex-row items-center justify-center gap-12 mt-12">
+<div class="flex-1 space-y-6 text-center md:text-left z-10">
+<div class="inline-flex items-center gap-2 bg-secondary-container text-on-secondary-container px-4 py-2 rounded-full font-label-md shadow-sm">
+<span class="material-symbols-outlined text-sm">waving_hand</span>
+<span>Hello!</span>
+</div>
+<h1 class="font-display-lg text-display-lg-mobile md:text-display-lg text-primary">Xin chào! Tôi là Dev.Architect</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-lg mx-auto md:mx-0">
+                    Kiến tạo thế giới số bằng những dòng code đầy màu sắc. Building digital worlds with colorful code.
+                </p>
+<div class="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4 pt-4">
+<button class="w-full sm:w-auto bg-primary text-on-primary font-label-md px-8 py-4 rounded-full clay-btn-primary hover:scale-105 transition-transform duration-200 text-lg">
+                        Bắt đầu / Start Here
+                    </button>
+<button class="w-full sm:w-auto bg-surface-container-high text-on-surface font-label-md px-8 py-4 rounded-full hover:scale-105 transition-transform duration-200 text-lg border-2 border-transparent hover:border-outline">
+                        Xem Dự Án / Portfolio
+                    </button>
+</div>
+</div>
+<div class="flex-1 relative w-full max-w-md mx-auto aspect-square">
+<!-- 3D Character Image -->
+<div class="absolute inset-0 bg-primary-container/30 rounded-full blur-3xl -z-10 animate-pulse"></div>
+<img alt="A 3D stylized cartoon character resembling a young developer wearing glasses and a blue hoodie, holding an orange laptop. Floating around them are colorful geometric blocks, bright pink blocks, blue cubes, and yellow gears. The character has a cheerful, friendly expression. The overall style is modern claymorphism, highly vibrant and colorful with soft lighting on a clean white background." class="w-full h-full object-contain drop-shadow-[0_20px_40px_rgba(167,38,131,0.3)]" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDVYkB7uhUA99lZCcZ6QOaeXWTXBK84PGRhmj7I6UnVQspDQLKphZmuQ9EfsMLJkzjgNNldroVsI5wusgVm97xHk-YwGuvJCy63qSZdeGc-3Iju3rFHlT2wtp86-W4U7vqNH-fksJHfJnnimph7_o09uhexBxNo2O97mkFyaMPI_SCAHg-eQSDmogUDaGEgdysPFhSdRAmx3SqLVSp4kNeGCEMy2tU7c_YMeNFB1UswyJwsunBgd9Xue4fEYcUNqF-GNAhN-CYwQ5I"/>
+</div>
+</section>
+<!-- About Me Section -->
+<section class="scroll-mt-32" id="about">
+<div class="clay-card rounded-xl p-8 md:p-12 relative overflow-hidden">
+<div class="absolute -top-10 -right-10 w-40 h-40 bg-tertiary-container rounded-full blur-2xl opacity-50"></div>
+<div class="absolute -bottom-10 -left-10 w-40 h-40 bg-secondary-container rounded-full blur-2xl opacity-50"></div>
+<div class="relative z-10 flex flex-col md:flex-row items-start gap-8">
+<div class="w-24 h-24 bg-primary-container text-primary flex items-center justify-center rounded-[2rem] shadow-lg shrink-0">
+<span class="material-symbols-outlined text-[48px]">psychology</span>
+</div>
+<div class="space-y-4">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Về Tôi / About Me</h2>
+<p class="text-body-lg text-on-surface-variant leading-relaxed">
+                            Tôi là một Software Architect và Developer đam mê tạo ra những trải nghiệm người dùng vui vẻ và thú vị. Với nền tảng vững chắc về kiến trúc hệ thống, tôi không chỉ viết code mà còn xây dựng những giải pháp bền vững, mang lại nụ cười cho người sử dụng.
+                        </p>
+<div class="flex flex-wrap gap-3 pt-4">
+<span class="bg-surface-container-highest text-on-surface-variant px-4 py-2 rounded-full font-label-md text-sm border border-outline-variant shadow-sm hover:-translate-y-1 transition-transform">Architecture</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-4 py-2 rounded-full font-label-md text-sm border border-outline-variant shadow-sm hover:-translate-y-1 transition-transform">UX Design</span>
+<span class="bg-surface-container-highest text-on-surface-variant px-4 py-2 rounded-full font-label-md text-sm border border-outline-variant shadow-sm hover:-translate-y-1 transition-transform">Joyful Code</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Projects Section -->
+<section class="space-y-12 scroll-mt-32" id="projects">
+<div class="text-center space-y-2">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-primary">Dự Án Nổi Bật</h2>
+<p class="text-on-surface-variant font-body-md">Featured Joyful Creations</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+<!-- Project 1 -->
+<div class="bg-surface-container rounded-xl p-6 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-transform duration-300 border-2 border-transparent hover:border-secondary-container group">
+<div class="w-16 h-16 bg-secondary-container text-on-secondary-container rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">shopping_cart</span>
+</div>
+<h3 class="font-headline-lg text-xl text-on-surface mb-2">E-commerce Engine</h3>
+<p class="text-on-surface-variant text-sm mb-6">Hệ thống thương mại điện tử siêu tốc độ với kiến trúc microservices.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Mega Tech</span>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Fast</span>
+</div>
+</div>
+<!-- Project 2 -->
+<div class="bg-surface-container rounded-xl p-6 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-transform duration-300 border-2 border-transparent hover:border-tertiary-container group">
+<div class="w-16 h-16 bg-tertiary-container text-on-tertiary-container rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">api</span>
+</div>
+<h3 class="font-headline-lg text-xl text-on-surface mb-2">Core API Services</h3>
+<p class="text-on-surface-variant text-sm mb-6">Trái tim của hệ sinh thái, cung cấp API mạnh mẽ và bảo mật cao.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-tertiary/10 text-tertiary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Magic Code</span>
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Secure</span>
+</div>
+</div>
+<!-- Project 3 -->
+<div class="bg-surface-container rounded-xl p-6 shadow-[0_10px_30px_-15px_rgba(0,0,0,0.1)] hover:-translate-y-2 transition-transform duration-300 border-2 border-transparent hover:border-primary-container group">
+<div class="w-16 h-16 bg-primary-container text-on-primary-container rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform">
+<span class="material-symbols-outlined text-3xl">rocket_launch</span>
+</div>
+<h3 class="font-headline-lg text-xl text-on-surface mb-2">Launchpad Platform</h3>
+<p class="text-on-surface-variant text-sm mb-6">Nền tảng khởi chạy dự án với giao diện kẹo ngọt và UX tuyệt vời.</p>
+<div class="flex flex-wrap gap-2">
+<span class="bg-primary/10 text-primary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">UX Joy</span>
+<span class="bg-secondary/10 text-secondary px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider">Creative</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Services/Pricing Section -->
+<section class="space-y-12 scroll-mt-32" id="services">
+<div class="text-center space-y-2">
+<h2 class="font-headline-lg text-headline-lg-mobile md:text-headline-lg text-on-surface">Gói Dịch Vụ / Packages</h2>
+<p class="text-on-surface-variant font-body-md">Pick your candy flavor</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+<!-- Basic Tier -->
+<div class="bg-surface-container-low rounded-[2rem] p-8 border-4 border-secondary-fixed shadow-[0_15px_0_0_#b9eaff] hover:translate-y-2 hover:shadow-[0_5px_0_0_#b9eaff] transition-all flex flex-col">
+<div class="text-secondary mb-4 flex justify-center">
+<span class="material-symbols-outlined text-5xl">icecream</span>
+</div>
+<h3 class="font-headline-lg text-2xl text-center text-on-surface mb-2">Basic</h3>
+<div class="font-display-lg text-3xl text-center text-secondary mb-6">2tr+</div>
+<ul class="space-y-4 mb-8 flex-1">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-fixed-dim">check_circle</span>
+<span>Nền tảng vững chắc</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-secondary-fixed-dim">check_circle</span>
+<span>UI/UX cơ bản</span>
+</li>
+</ul>
+<button class="w-full bg-secondary-fixed text-on-secondary-fixed font-bold py-3 rounded-full hover:bg-secondary-fixed-dim transition-colors">Chọn Gói</button>
+</div>
+<!-- Plus Tier -->
+<div class="bg-primary-container rounded-[2rem] p-8 border-4 border-primary shadow-[0_15px_0_0_#a72683] hover:translate-y-2 hover:shadow-[0_5px_0_0_#a72683] transition-all flex flex-col relative scale-105 z-10">
+<div class="absolute -top-4 -right-4 bg-tertiary text-on-tertiary text-xs font-bold px-3 py-1 rounded-full transform rotate-12">POPULAR!</div>
+<div class="text-on-primary-container mb-4 flex justify-center">
+<span class="material-symbols-outlined text-5xl">cake</span>
+</div>
+<h3 class="font-headline-lg text-2xl text-center text-on-primary-container mb-2">Plus</h3>
+<div class="font-display-lg text-3xl text-center text-primary mb-6">5tr+</div>
+<ul class="space-y-4 mb-8 flex-1">
+<li class="flex items-center gap-3 text-on-primary-container">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Giải pháp linh hoạt</span>
+</li>
+<li class="flex items-center gap-3 text-on-primary-container">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Thiết kế Kawaii</span>
+</li>
+<li class="flex items-center gap-3 text-on-primary-container">
+<span class="material-symbols-outlined text-primary">check_circle</span>
+<span>Tối ưu hiệu suất</span>
+</li>
+</ul>
+<button class="w-full bg-primary text-on-primary font-bold py-3 rounded-full hover:bg-surface-tint transition-colors clay-btn-primary">Chọn Gói</button>
+</div>
+<!-- Premium Tier -->
+<div class="bg-surface-container-low rounded-[2rem] p-8 border-4 border-tertiary-fixed shadow-[0_15px_0_0_#f1daff] hover:translate-y-2 hover:shadow-[0_5px_0_0_#f1daff] transition-all flex flex-col">
+<div class="text-tertiary mb-4 flex justify-center">
+<span class="material-symbols-outlined text-5xl">diamond</span>
+</div>
+<h3 class="font-headline-lg text-2xl text-center text-on-surface mb-2">Premium</h3>
+<div class="font-display-lg text-3xl text-center text-tertiary mb-6">12tr+</div>
+<ul class="space-y-4 mb-8 flex-1">
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span>Kiến trúc thượng tầng</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span>Microservices</span>
+</li>
+<li class="flex items-center gap-3 text-on-surface-variant">
+<span class="material-symbols-outlined text-tertiary-fixed-dim">check_circle</span>
+<span>Hỗ trợ 24/7</span>
+</li>
+</ul>
+<button class="w-full bg-tertiary-fixed text-on-tertiary-fixed font-bold py-3 rounded-full hover:bg-tertiary-fixed-dim transition-colors">Chọn Gói</button>
+</div>
+</div>
+</section>
+<!-- Contact Section -->
+<section class="scroll-mt-32" id="contact">
+<div class="bg-inverse-surface text-inverse-on-surface rounded-[3rem] p-8 md:p-16 flex flex-col md:flex-row items-center justify-between gap-12 relative overflow-hidden">
+<div class="absolute -right-20 -top-20 w-64 h-64 bg-inverse-primary rounded-full blur-3xl opacity-20"></div>
+<div class="space-y-6 max-w-md text-center md:text-left z-10">
+<h2 class="font-display-lg text-headline-lg-mobile md:text-headline-lg text-inverse-primary">Kết nối cùng tôi</h2>
+<p class="text-body-lg text-surface-variant">
+                        Sẵn sàng để bắt đầu dự án đầy màu sắc tiếp theo? Hãy gửi tin nhắn hoặc đặt lịch hẹn ngay nhé!
+                    </p>
+<div class="flex flex-col sm:flex-row gap-4 pt-4 justify-center md:justify-start">
+<button class="flex items-center justify-center gap-2 bg-inverse-primary text-on-primary-container font-bold px-6 py-3 rounded-full hover:scale-105 active:scale-95 transition-all">
+<span class="material-symbols-outlined">mail</span>
+                            Gửi Email
+                        </button>
+<button class="flex items-center justify-center gap-2 bg-surface-variant/20 text-inverse-on-surface font-bold px-6 py-3 rounded-full border border-surface-variant/30 hover:bg-surface-variant/30 transition-all">
+<span class="material-symbols-outlined">calendar_month</span>
+                            Đặt lịch hẹn
+                        </button>
+</div>
+</div>
+<div class="bg-surface-container-highest p-4 rounded-3xl shadow-xl rotate-3 hover:rotate-0 transition-transform duration-300 z-10 shrink-0">
+<div class="w-48 h-48 bg-white rounded-2xl flex items-center justify-center relative overflow-hidden">
+<!-- Simulated QR Code visual -->
+<div class="absolute inset-2 border-4 border-on-surface rounded-xl flex flex-wrap content-start p-2 gap-1 bg-white">
+<div class="w-8 h-8 bg-on-surface rounded-sm"></div>
+<div class="w-4 h-4 bg-on-surface rounded-sm"></div>
+<div class="w-6 h-6 bg-on-surface rounded-sm"></div>
+<div class="w-full h-2 bg-on-surface rounded-sm mt-2"></div>
+<div class="w-10 h-10 bg-primary rounded-sm absolute bottom-4 right-4"></div>
+<div class="w-8 h-8 bg-on-surface rounded-sm absolute top-4 right-4"></div>
+<div class="w-8 h-8 bg-on-surface rounded-sm absolute bottom-4 left-4"></div>
+<div class="absolute inset-0 flex items-center justify-center text-on-surface font-bold text-xs opacity-50">SCAN ME</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- BottomNavBar (Mobile) -->
+<nav class="md:hidden flex justify-around items-end pb-safe pt-2 px-4 w-full z-50 fixed bottom-0 left-0 right-0 rounded-t-xl border-t-4 border-secondary-container bg-surface-container-highest/90 dark:bg-surface-container/90 backdrop-blur-lg shadow-[0_-10px_20px_rgba(0,103,129,0.15)]">
+<a class="flex flex-col items-center justify-center bg-secondary-container text-on-secondary-container rounded-full px-6 py-2 scale-110 -translate-y-2 shadow-lg transition-all" href="#">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">home</span>
+<span class="font-label-md text-[10px] mt-1">Home</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 pb-2" href="#projects">
+<span class="material-symbols-outlined">rocket_launch</span>
+<span class="font-label-md text-[10px] mt-1">Work</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 pb-2" href="#about">
+<span class="material-symbols-outlined">face</span>
+<span class="font-label-md text-[10px] mt-1">About</span>
+</a>
+<a class="flex flex-col items-center justify-center text-on-surface-variant opacity-70 hover:opacity-100 pb-2" href="#contact">
+<span class="material-symbols-outlined">chat_bubble</span>
+<span class="font-label-md text-[10px] mt-1">Chat</span>
+</a>
+</nav>
+<!-- Footer -->
+<footer class="w-full rounded-t-xl mt-stack-gap p-gutter bg-surface-container-low dark:bg-surface-container-highest border-t-4 border-tertiary-container dark:border-tertiary shadow-[0_-8px_0_0_rgba(133,47,202,0.1)] pb-24 md:pb-8">
+<div class="flex flex-col md:flex-row justify-between items-center gap-stack-gap max-w-7xl mx-auto">
+<div class="font-display-lg text-headline-sm text-tertiary">DevBubble</div>
+<div class="flex gap-6">
+<a class="text-on-surface-variant hover:text-tertiary transition-all hover:-translate-y-1 hover:rotate-3 duration-300 font-label-md" href="#">GitHub</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-all hover:-translate-y-1 hover:rotate-3 duration-300 font-label-md" href="#">LinkedIn</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-all hover:-translate-y-1 hover:rotate-3 duration-300 font-label-md" href="#">Twitter</a>
+<a class="text-on-surface-variant hover:text-tertiary transition-all hover:-translate-y-1 hover:rotate-3 duration-300 font-label-md" href="#">Dribbble</a>
+</div>
+<div class="font-body-md text-sm text-tertiary dark:text-tertiary-fixed-dim text-center md:text-right">
+                © 2024 DevBubble • Built with sparkles and code
+            </div>
+</div>
+</footer>
+</body></html>

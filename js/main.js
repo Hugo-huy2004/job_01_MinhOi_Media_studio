@@ -25,13 +25,25 @@ document.addEventListener('DOMContentLoaded', () => {
         observer.unobserve(entry.target);
       });
     }, {
-      rootMargin: '520px 0px',
+      rootMargin: '1400px 0px',
       threshold: 0.01
     });
 
     lazyImages.forEach(image => imageObserver.observe(image));
   } else {
     lazyImages.forEach(loadImage);
+  }
+
+  const warmUpLazyImages = () => {
+    lazyImages.forEach(loadImage);
+  };
+
+  if (lazyImages.length > 0) {
+    if ('requestIdleCallback' in window) {
+      window.requestIdleCallback(warmUpLazyImages, { timeout: 1800 });
+    } else {
+      window.setTimeout(warmUpLazyImages, 900);
+    }
   }
 
   const loadHeroBackground = (slide) => {

@@ -1187,6 +1187,14 @@ li {
   color: var(--gray-medium);
 }
 
+.package-note {
+  margin-top: 8px;
+  margin-bottom: 0;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
 .package-list {
   display: flex;
   flex-direction: column;

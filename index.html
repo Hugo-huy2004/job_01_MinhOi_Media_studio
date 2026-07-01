@@ -46,32 +46,16 @@
 
   <div id="header-placeholder"></div>
 
-  <div class="promo-modal" id="singlePromoModal" role="dialog" aria-labelledby="singlePromoTitle">
-    <div class="promo-modal-backdrop" data-promo-close></div>
-    <div class="promo-modal-card" data-tilt-card>
-      <button class="promo-modal-close" type="button" aria-label="Đóng quảng cáo" data-promo-close>
-        <span data-lucide="x">Đóng</span>
-      </button>
-      <span class="promo-modal-kicker">Một lời nhắn nhỏ</span>
-      <h2 id="singlePromoTitle">Ngày thương nhau, mình kể cho thật đẹp nhé</h2>
-      <p>Bắt đầu từ một lựa chọn thật vừa vặn, rồi để Mình Ơi cùng bạn giữ lại những khoảnh khắc khiến hai người mỉm cười mãi về sau.</p>
-      <div class="promo-modal-actions">
-        <a href="#single-packages-title" class="promo-modal-link promo-modal-link-primary" data-promo-close>Xem điều vừa vặn</a>
-        <a href="https://m.me/61577268082387" target="_blank" class="promo-modal-link">Nhắn Mình Ơi</a>
-      </div>
-    </div>
-  </div>
-
   <section class="hero">
     <div class="hero-slider">
       <div class="hero-slide"
         style="background-image: url('https://res.cloudinary.com/dyehwoscu/image/upload/v1778865921/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.25.13_vffhud.png');">
       </div>
       <div class="hero-slide"
-        style="background-image: url('https://res.cloudinary.com/dyehwoscu/image/upload/v1778866003/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.26.38_lmaevk.png');">
+        data-bg="https://res.cloudinary.com/dyehwoscu/image/upload/v1778866003/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.26.38_lmaevk.png">
       </div>
       <div class="hero-slide"
-        style="background-image: url('https://res.cloudinary.com/dyehwoscu/image/upload/v1778866666/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.37.36_rq3quh.png');">
+        data-bg="https://res.cloudinary.com/dyehwoscu/image/upload/v1778866666/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.37.36_rq3quh.png">
       </div>
     </div>
     <div class="hero-overlay"></div>
@@ -99,8 +83,7 @@
     </div>
 
     <div class="pricing-intro reveal">
-      <p>Mỗi câu chuyện cưới đều có một cách bắt đầu rất riêng. Bạn có thể chọn điều vừa vặn hôm nay, rồi để Mình Ơi
-        cùng nâng niu những khoảnh khắc đáng nhớ nhất.</p>
+      <p>Dâu rể chỉ cần chọn điều hợp với ngày cưới của mình, phần còn lại cứ để Mình Ơi giữ lại thật đẹp, thật thương.</p>
     </div>
 
     <section class="pricing-section pricing-section-singles reveal" aria-labelledby="single-packages-title">
@@ -111,75 +94,95 @@
 
       <div class="single-service-board">
         <div class="single-service-item single-service-item-lowest single-service-compact" data-tilt-card>
-          <div class="single-service-icon">
-            <span data-lucide="plane">Flycam</span>
+          <div class="single-service-media">
+            <img class="lazy-media" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://res.cloudinary.com/dyehwoscu/image/upload/v1778868303/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_01.04.40_gc7xqq.png" alt="Khoảnh khắc cưới nhìn từ trên cao" loading="lazy">
           </div>
           <div class="single-service-main">
             <span class="single-service-tag">Giá thấp nhất</span>
             <h3>Flycam</h3>
-            <p>Một góc nhìn từ trên cao để ngày vui của hai bạn rộng hơn, đẹp hơn và có thêm chút mộng mơ.</p>
+            <p>Nếu dâu rể muốn ngày cưới nhìn thật rộng, thật đã mắt, flycam sẽ giúp mở đầu câu chuyện bằng một khung hình đáng nhớ.</p>
           </div>
           <div class="single-service-price">3.000.000 <span>VNĐ</span></div>
+          <ul class="single-service-includes">
+            <li class="single-service-includes-title">Bạn nhận được</li>
+            <li>Góc quay toàn cảnh không gian lễ cưới</li>
+            <li>Những khung hình mở đầu giàu cảm xúc cho phim cưới</li>
+          </ul>
         </div>
 
-        <div class="single-service-item single-service-compact" data-tilt-card>
-          <div class="single-service-icon">
-            <span data-lucide="sparkles">Lễ riêng</span>
+        <div class="single-service-item single-service-featured" data-tilt-card>
+          <div class="single-service-media">
+            <img class="lazy-media" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://res.cloudinary.com/dyehwoscu/image/upload/v1778867317/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.48.29_sybzuk.png" alt="Chụp ảnh cưới truyền thống" loading="lazy">
           </div>
           <div class="single-service-main">
-            <span class="single-service-tag">Nghi thức riêng</span>
-            <h3>Lễ Xuất Giá</h3>
-            <p>Khoảnh khắc rời vòng tay gia đình được giữ lại nhẹ nhàng bằng ảnh hoặc phim, để sau này nhìn lại vẫn thấy thương.</p>
-          </div>
-          <div class="single-service-price single-service-contact">Liên hệ tư vấn</div>
-        </div>
-
-        <div class="single-service-item" data-tilt-card>
-          <div class="single-service-icon">
-            <span data-lucide="camera">Chụp</span>
-          </div>
-          <div class="single-service-main">
-            <span class="single-service-tag">Ảnh truyền thống</span>
+            <span class="single-service-tag">Dễ chọn nhất</span>
             <h3>Máy Chụp Truyền Thống</h3>
-            <p>Những tấm hình đủ đầy bên gia đình, bạn bè và bàn tiệc, gói lại thành 100 ảnh in lụa cùng một album nhỏ xinh.</p>
+            <p>Dành cho dâu rể muốn có đủ hình cùng ba mẹ, họ hàng, bạn bè và bàn tiệc, để ai thương mình cũng có mặt trong album.</p>
           </div>
           <div class="single-service-price">4.000.000 <span>VNĐ</span></div>
+          <ul class="single-service-includes">
+            <li class="single-service-includes-title">Bạn nhận được</li>
+            <li>Chụp cổng, backdrop, lễ tiệc và gia đình</li>
+            <li>100 ảnh in lụa cao cấp</li>
+            <li>01 album ảnh</li>
+            <li>Chỉnh sửa toàn bộ file ảnh</li>
+          </ul>
         </div>
 
         <div class="single-service-item" data-tilt-card>
-          <div class="single-service-icon">
-            <span data-lucide="video">Quay</span>
+          <div class="single-service-media">
+            <img class="lazy-media" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://res.cloudinary.com/dyehwoscu/image/upload/v1778866666/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.37.36_rq3quh.png" alt="Quay phim cưới truyền thống" loading="lazy">
           </div>
           <div class="single-service-main">
             <span class="single-service-tag">Phim truyền thống</span>
             <h3>Máy Quay Truyền Thống</h3>
-            <p>Một thước phim dài để ba mẹ, họ hàng và hai bạn có thể xem lại trọn vẹn từng nghi thức thân thương.</p>
+            <p>Khi dâu rể muốn ba mẹ và gia đình xem lại trọn vẹn từng nghi thức, gói này giữ đủ diễn biến trong một thước phim dài.</p>
           </div>
           <div class="single-service-price">5.000.000 <span>VNĐ</span></div>
+          <ul class="single-service-includes">
+            <li class="single-service-includes-title">Bạn nhận được</li>
+            <li>Ghi lại đầy đủ diễn biến buổi lễ</li>
+            <li>Phim dài khoảng 30 phút đến 1 tiếng</li>
+            <li>Hậu kỳ màu sắc và âm thanh chỉn chu</li>
+          </ul>
         </div>
 
         <div class="single-service-item" data-tilt-card>
-          <div class="single-service-icon">
-            <span data-lucide="aperture">Phóng sự ảnh</span>
+          <div class="single-service-media">
+            <img class="lazy-media" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://res.cloudinary.com/dyehwoscu/image/upload/v1778865812/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.23.23_y8vomm.png" alt="Chụp ảnh phóng sự cưới" loading="lazy">
           </div>
           <div class="single-service-main">
             <span class="single-service-tag">Ảnh phóng sự</span>
             <h3>Máy Chụp Phóng Sự</h3>
-            <p>Dành cho những cái nắm tay, ánh nhìn và nụ cười bất chợt. Kèm 100 ảnh in lụa, một album và file chỉnh sửa kỹ.</p>
+            <p>Dành cho dâu rể thích những khoảnh khắc thật: cái nắm tay, ánh nhìn, nụ cười bất chợt và cảm xúc không cần diễn.</p>
           </div>
           <div class="single-service-price">6.000.000 <span>VNĐ</span></div>
+          <ul class="single-service-includes">
+            <li class="single-service-includes-title">Bạn nhận được</li>
+            <li>Bộ ảnh kể lại cảm xúc tự nhiên trong ngày cưới</li>
+            <li>100 ảnh in lụa cao cấp</li>
+            <li>01 album ảnh</li>
+            <li>Chỉnh sửa toàn bộ file ảnh</li>
+          </ul>
         </div>
 
         <div class="single-service-item" data-tilt-card>
-          <div class="single-service-icon">
-            <span data-lucide="clapperboard">Phóng sự phim</span>
+          <div class="single-service-media">
+            <img class="lazy-media" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://res.cloudinary.com/dyehwoscu/image/upload/v1778924834/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_16.47.07_bayvhm.png" alt="Quay phim phóng sự cưới" loading="lazy">
           </div>
           <div class="single-service-main">
             <span class="single-service-tag">Phim phóng sự</span>
             <h3>Máy Quay Phóng Sự</h3>
-            <p>Một bộ phim ngắn 4-8 phút, kể lại ngày cưới bằng những điều thật nhất và mềm nhất của hai bạn.</p>
+            <p>Nếu dâu rể muốn một phim ngắn xem là thấy lại cảm xúc ngày cưới, phóng sự sẽ kể chuyện bằng những điều thật nhất.</p>
           </div>
           <div class="single-service-price">7.000.000 <span>VNĐ</span></div>
+          <ul class="single-service-includes">
+            <li class="single-service-includes-title">Bạn nhận được</li>
+            <li>Phim phóng sự cưới giàu cảm xúc</li>
+            <li>Thời lượng 4-8 phút</li>
+            <li>Chất lượng 4K</li>
+            <li>Hậu kỳ nhịp phim và màu sắc kỹ lưỡng</li>
+          </ul>
         </div>
       </div>
     </section>
@@ -192,10 +195,13 @@
 
       <div class="package-grid">
         <div class="price-card package-card">
+          <div class="package-media">
+            <img class="lazy-media" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://res.cloudinary.com/dyehwoscu/image/upload/v1778867952/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-05-16_lu%CC%81c_00.58.47_cwvued.png" alt="Gói Phu Thê" loading="lazy">
+          </div>
           <span class="package-eyebrow">Vừa vặn để bắt đầu</span>
           <h3>Gói Phu Thê</h3>
           <p class="price">13.000.000 <span class="price-unit">VNĐ</span></p>
-          <p class="package-value">Một lựa chọn gọn ghẽ cho hai phần lễ, đủ ảnh đẹp, đủ album để gia đình cùng giữ lại.</p>
+          <p class="package-value">Dành cho dâu rể muốn một lựa chọn gọn gàng nhưng vẫn đủ hai phần lễ, đủ ảnh đẹp và album để gửi gia đình.</p>
           <ul class="package-list">
             <li class="price-header"><strong>Vu Quy</strong></li>
             <li>01 máy chụp truyền thống</li>
@@ -203,16 +209,21 @@
             <li>01 máy chụp truyền thống (nhà trai)</li>
             <li>01 máy chụp phóng sự (nhà gái)</li>
             <li class="price-header package-benefit-title"><strong>Sản phẩm nhận được</strong></li>
-            <li class="package-benefit-item">250 ảnh in lụa cao cấp</li>
-            <li class="package-benefit-item">02 album ảnh</li>
+            <li class="package-benefit-item">250 ảnh in lụa cao cấp để gửi hai bên gia đình</li>
+            <li class="package-benefit-item">02 album ảnh giữ lại những khoảnh khắc chính</li>
+            <li class="package-benefit-item">Bộ ảnh truyền thống đầy đủ người thân, nghi lễ và bàn tiệc</li>
+            <li class="package-benefit-item">Ảnh phóng sự nhà gái để ngày vui có thêm cảm xúc tự nhiên</li>
           </ul>
         </div>
 
         <div class="price-card package-card popular package-card-featured">
+          <div class="package-media">
+            <img class="lazy-media" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://res.cloudinary.com/dyehwoscu/image/upload/v1782884447/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-07-01_lu%CC%81c_12.40.31_qdt9up.png" alt="Gói Trầu Cao" loading="lazy">
+          </div>
           <span class="package-eyebrow">Thêm một phần yêu thương</span>
           <h3>Gói Trầu Cao</h3>
           <p class="price">24.000.000 <span class="price-unit">VNĐ</span></p>
-          <p class="package-value">Khi bạn muốn không chỉ có ảnh, mà còn có tiếng cười, lời chúc và không khí ngày cưới được lưu lại.</p>
+          <p class="package-value">Dành cho dâu rể muốn ngày cưới có cả ảnh lẫn phim, để tiếng cười, lời chúc và không khí hôm ấy còn nguyên.</p>
           <ul class="package-list">
             <li class="price-header"><strong>Vu Quy</strong></li>
             <li>01 máy chụp phóng sự</li>
@@ -222,17 +233,24 @@
             <li>01 máy quay truyền thống (nhà trai)</li>
             <li>01 máy chụp phóng sự (nhà gái)</li>
             <li class="price-header package-benefit-title"><strong>Sản phẩm nhận được</strong></li>
-            <li class="package-benefit-item">250 ảnh in lụa cao cấp</li>
-            <li class="package-benefit-item">02 album ảnh</li>
+            <li class="package-benefit-item">250 ảnh in lụa cao cấp, chọn lọc từ cả hai phần lễ</li>
+            <li class="package-benefit-item">02 album ảnh để dâu rể và ba mẹ cùng lưu giữ</li>
+            <li class="package-benefit-item">Có thêm phim truyền thống Vu Quy, giữ trọn lời chúc và nghi thức</li>
+            <li class="package-benefit-item">Có thêm phim truyền thống Tân Hôn bên nhà trai</li>
+            <li class="package-benefit-item">Ảnh phóng sự ở cả Vu Quy và nhà gái trong ngày Tân Hôn</li>
+            <li class="package-benefit-item">Một combo vừa có ảnh, vừa có phim, nhìn lại sẽ đủ không khí ngày cưới</li>
           </ul>
         </div>
 
         <div class="price-card package-card package-card-premium">
+          <div class="package-media">
+            <img class="lazy-media" src="data:image/gif;base64,R0lGODlhAQABAAAAACw=" data-src="https://res.cloudinary.com/dyehwoscu/image/upload/v1782884538/A%CC%89nh_ma%CC%80n_hi%CC%80nh_2026-07-01_lu%CC%81c_12.42.10_tnpv1s.png" alt="Gói Mình Ơi" loading="lazy">
+          </div>
           <span class="package-eyebrow">Để thương nhớ thật lâu</span>
           <h3>Gói Mình Ơi</h3>
           <p class="price">29.000.000 <span class="price-unit">VNĐ</span></p>
           <p class="text-small package-subtitle">(Quay chụp phóng sự)</p>
-          <p class="package-value">Dành cho ngày cưới mà từng ánh mắt, từng cái ôm và từng lời chúc đều xứng đáng được kể bằng phóng sự.</p>
+          <p class="package-value">Dành cho dâu rể muốn ngày cưới được kể thật trọn: nhà gái, nhà trai, ảnh, phim và những cảm xúc khó lặp lại.</p>
           <ul class="package-list">
             <li class="price-header"><strong>Vu Quy</strong></li>
             <li>01 máy chụp phóng sự</li>
@@ -243,8 +261,12 @@
             <li>01 máy chụp phóng sự</li>
             <li>01 máy quay phóng sự</li>
             <li class="price-header package-benefit-title"><strong>Sản phẩm & đặc quyền</strong></li>
-            <li class="package-benefit-item">300 ảnh in lụa cao cấp</li>
-            <li class="package-benefit-item">02 album ảnh</li>
+            <li class="package-benefit-item">300 ảnh in lụa cao cấp, nhiều hơn để dâu rể chọn thoải mái</li>
+            <li class="package-benefit-item">02 album ảnh chỉn chu cho hai bên gia đình</li>
+            <li class="package-benefit-item">Phim phóng sự nhà gái, kể lại cảm xúc theo cách tự nhiên nhất</li>
+            <li class="package-benefit-item">Phim phóng sự nhà trai, giữ lại không khí đón dâu và tiệc cưới</li>
+            <li class="package-benefit-item">Ảnh phóng sự phủ đủ Vu Quy, nhà gái và nhà trai</li>
+            <li class="package-benefit-item">Hậu kỳ ảnh và phim theo màu sắc cao cấp của Mình Ơi</li>
             <li class="package-benefit-item package-benefit-premium">Thừa hưởng toàn bộ đặc quyền cao cấp bên mình</li>
           </ul>
         </div>
@@ -271,10 +293,15 @@
           <p>Thời gian phục vụ chính: Lễ tiệc sáng trưa đến 14h chiều cùng ngày (Có hỗ trợ thêm giờ theo yêu cầu).</p>
         </div>
         <div class="footer-item">
+          <h4>Lễ Xuất Giá</h4>
+          <p>Phụ phí theo nhu cầu: chụp ảnh 1.000.000 VNĐ, quay phim 1.000.000 VNĐ. Mình Ơi sẽ tư vấn thêm để phù hợp lịch lễ của gia đình.</p>
+        </div>
+        <div class="footer-item">
           <h4>Cam Kết Chất Lượng</h4>
           <p>Mọi gói dịch vụ đều bao gồm chỉnh sửa toàn bộ file kỹ lưỡng, đảm bảo phim chất lượng 4K.
           </p>
         </div>
+
       </div>
       <div class="price-footer-note">
         <p>* Giá trên chưa bao gồm phí di chuyển ngoại tỉnh.</p>

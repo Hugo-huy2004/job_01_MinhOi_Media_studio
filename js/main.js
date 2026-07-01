@@ -4,98 +4,130 @@ document.addEventListener('DOMContentLoaded', () => {
     window.lucide.createIcons();
   }
 
+  const loadImage = (image) => {
+    if (!image.dataset.src) return;
+
+    image.addEventListener('load', () => {
+      image.classList.add('is-loaded');
+    }, { once: true });
+
+    image.src = image.dataset.src;
+    image.removeAttribute('data-src');
+  };
+
+  const lazyImages = document.querySelectorAll('img[data-src]');
+  if ('IntersectionObserver' in window && lazyImages.length > 0) {
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach(entry => {
+        if (!entry.isIntersecting) return;
+
+        loadImage(entry.target);
+        observer.unobserve(entry.target);
+      });
+    }, {
+      rootMargin: '520px 0px',
+      threshold: 0.01
+    });
+
+    lazyImages.forEach(image => imageObserver.observe(image));
+  } else {
+    lazyImages.forEach(loadImage);
+  }
+
+  const loadHeroBackground = (slide) => {
+    if (!slide || !slide.dataset.bg) return;
+
+    slide.style.backgroundImage = `url('${slide.dataset.bg}')`;
+    slide.removeAttribute('data-bg');
+  };
+
   const tiltCards = document.querySelectorAll('[data-tilt-card]');
   const canHover = window.matchMedia('(hover: hover)').matches;
   if (window.VanillaTilt && tiltCards.length > 0 && canHover) {
-    window.VanillaTilt.init(tiltCards, {
-      max: 5,
-      speed: 600,
-      glare: true,
-      'max-glare': 0.12,
-      scale: 1.01
-    });
-  }
+    const initTiltCard = (card) => {
+      if (card.dataset.tiltReady) return;
 
-  const promoModal = document.getElementById('singlePromoModal');
-  if (promoModal) {
-    const promoCard = promoModal.querySelector('.promo-modal-card');
-    const closeButtons = promoModal.querySelectorAll('[data-promo-close]');
-
-    if (window.anime && promoCard) {
-      window.anime({
-        targets: promoCard,
-        opacity: [0, 1],
-        translateY: [28, 0],
-        scale: [0.94, 1],
-        duration: 720,
-        easing: 'easeOutCubic'
+      window.VanillaTilt.init(card, {
+        max: 5,
+        speed: 600,
+        glare: true,
+        'max-glare': 0.12,
+        scale: 1.01
       });
-    }
-
-    const closePromo = () => {
-      if (promoModal.classList.contains('is-hidden')) return;
-
-      if (window.anime && promoCard) {
-        window.anime({
-          targets: promoCard,
-          opacity: [1, 0],
-          translateY: [0, 18],
-          scale: [1, 0.96],
-          duration: 260,
-          easing: 'easeInCubic',
-          complete: () => promoModal.classList.add('is-hidden')
-        });
-      } else {
-        promoModal.classList.add('is-hidden');
-      }
+      card.dataset.tiltReady = 'true';
     };
 
-    closeButtons.forEach(button => {
-      button.addEventListener('click', closePromo);
-    });
+    if ('IntersectionObserver' in window) {
+      const tiltObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
 
-    document.addEventListener('keydown', (event) => {
-      if (event.key === 'Escape') {
-        closePromo();
-      }
-    });
+          initTiltCard(entry.target);
+          observer.unobserve(entry.target);
+        });
+      }, {
+        rootMargin: '260px 0px',
+        threshold: 0.05
+      });
+
+      tiltCards.forEach(card => tiltObserver.observe(card));
+    } else {
+      tiltCards.forEach(initTiltCard);
+    }
   }
 
-  const singlesSection = document.querySelector('.pricing-section-singles');
-  if (window.anime && singlesSection) {
-    const promoElements = singlesSection.querySelectorAll('.single-service-item');
+  const animateServiceItem = (element, delay = 0) => {
+    if (!window.anime || element.dataset.animated) return;
+
+    element.dataset.animated = 'true';
+    window.anime({
+      targets: element,
+      opacity: [0, 1],
+      translateY: [22, 0],
+      scale: [0.98, 1],
+      delay,
+      duration: 620,
+      easing: 'easeOutCubic'
+    });
+  };
+
+  const promoElements = document.querySelectorAll('.single-service-item');
+  if (window.anime && promoElements.length > 0) {
     promoElements.forEach(element => {
       element.style.opacity = '0';
       element.style.transform = 'translateY(22px) scale(0.98)';
     });
 
-    const promoObserver = new IntersectionObserver((entries, observer) => {
-      entries.forEach(entry => {
-        if (!entry.isIntersecting) return;
+    if ('IntersectionObserver' in window) {
+      const promoObserver = new IntersectionObserver((entries, observer) => {
+        entries.forEach(entry => {
+          if (!entry.isIntersecting) return;
 
-        window.anime({
-          targets: promoElements,
-          opacity: [0, 1],
-          translateY: [22, 0],
-          scale: [0.98, 1],
-          delay: window.anime.stagger(85),
-          duration: 720,
-          easing: 'easeOutCubic'
+          const itemIndex = Array.from(promoElements).indexOf(entry.target);
+          animateServiceItem(entry.target, Math.min(itemIndex, 3) * 65);
+          observer.unobserve(entry.target);
         });
-
-        observer.unobserve(entry.target);
+      }, {
+        rootMargin: '160px 0px',
+        threshold: 0.12
       });
-    }, { threshold: 0.22 });
 
-    promoObserver.observe(singlesSection);
+      promoElements.forEach(element => promoObserver.observe(element));
+    } else {
+      promoElements.forEach((element, index) => animateServiceItem(element, index * 65));
+    }
   }
 
   const slides = document.querySelectorAll('.hero-slide');
   if (slides.length > 0) {
     let currentSlide = 0;
+    loadHeroBackground(slides[1]);
+
     setInterval(() => {
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide + 1) % slides.length;
+      loadHeroBackground(slides[currentSlide]);
+      loadHeroBackground(slides[(currentSlide + 1) % slides.length]);
       slides[currentSlide].classList.add('active');
     }, 3000);
   }

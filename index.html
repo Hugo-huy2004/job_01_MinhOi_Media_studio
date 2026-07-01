@@ -10,7 +10,7 @@
   <meta property="og:title" content="Báo Giá - Mình Ơi Media | Phóng Sự Cưới">
   <meta property="og:description"
     content="Bảng giá dịch vụ quay phim, chụp ảnh phóng sự cưới chuyên nghiệp từ Mình Ơi Media.">
-  <meta property="og:url" content="https://minhoimedia.digital/">
+  <meta property="og:url" content="https://minhoimedia.digital/?v=1">
   <meta property="og:site_name" content="Mình Ơi Media">
   <meta property="og:image" content="https://minhoimedia.digital/assets/images/image.png?v=2">
   <meta property="og:image:url" content="https://minhoimedia.digital/assets/images/image.png?v=2">
@@ -23,7 +23,16 @@
   <meta name="twitter:title" content="Báo Giá - Mình Ơi Media | Phóng Sự Cưới">
   <meta name="twitter:description" content="Bảng giá dịch vụ quay phim, chụp ảnh phóng sự cưới chuyên nghiệp từ Mình Ơi Media.">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="canonical" href="https://minhoimedia.digital/">
+  <link rel="canonical" href="https://minhoimedia.digital/?v=1">
+
+  <script>
+    // Auto cache-busting: update version daily
+    const dateVersion = Math.floor(Date.now() / 86400000); // new version each day
+    const ogUrl = document.querySelector('meta[property="og:url"]');
+    const canonical = document.querySelector('link[rel="canonical"]');
+    if (ogUrl) ogUrl.setAttribute('content', `https://minhoimedia.digital/?v=${dateVersion}`);
+    if (canonical) canonical.setAttribute('href', `https://minhoimedia.digital/?v=${dateVersion}`);
+  </script>
 
   <link rel="stylesheet" href="css/style.css">
   <link rel="preconnect" href="https://fonts.googleapis.com">

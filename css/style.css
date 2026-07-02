@@ -923,12 +923,16 @@ li {
 
 .lazy-media {
   opacity: 0;
+  will-change: opacity, filter;
+  filter: blur(8px);
 }
 
 .lazy-media.is-loaded {
   opacity: 1;
+  filter: blur(0);
   transition:
-    opacity 0.45s ease,
+    opacity 0.4s ease-out,
+    filter 0.4s ease-out,
     transform 0.8s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
@@ -1072,8 +1076,13 @@ li {
 .package-card {
   padding: 18px 24px 30px;
   border-radius: 22px;
-  background: rgba(255, 255, 255, 0.58);
-  border-color: rgba(83, 67, 59, 0.12);
+  background: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"),
+    rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 30px rgba(83, 67, 59, 0.08);
 }
 
 .price-card.package-card h3 {
@@ -1135,9 +1144,21 @@ li {
 
 .package-card-featured {
   transform: translateY(-10px);
-  background: rgba(255, 255, 255, 0.78);
-  border-color: rgba(128, 0, 0, 0.22);
-  box-shadow: 0 22px 58px rgba(83, 67, 59, 0.13);
+  background: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"),
+    linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.4) 48%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 52%, transparent 65%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.15) 100%);
+  background-size: auto, 200% 100%, auto;
+  background-repeat: repeat, no-repeat, no-repeat;
+  animation: glass-shimmer-subtle 7s infinite ease-in-out;
+  border-color: rgba(255, 255, 255, 0.7);
+  box-shadow: 0 22px 58px rgba(83, 67, 59, 0.15), inset 1px 1px 0px rgba(255, 255, 255, 0.6);
+}
+
+@keyframes glass-shimmer-subtle {
+  0% { background-position: 0 0, 200% 0, 0 0; }
+  15% { background-position: 0 0, -100% 0, 0 0; }
+  100% { background-position: 0 0, -100% 0, 0 0; }
 }
 
 .package-card-featured:hover {
@@ -1145,23 +1166,25 @@ li {
 }
 
 .package-card-premium {
-  background: linear-gradient(180deg, rgba(255, 255, 255, 0.82), rgba(255, 248, 238, 0.58));
+  background: 
+    url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 248, 238, 0.1));
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .package-eyebrow {
   width: fit-content;
   display: inline-flex;
   align-items: center;
-  min-height: 26px;
-  padding: 6px 12px;
+  min-height: 28px;
+  padding: 6px 14px;
   margin-bottom: 14px;
   border-radius: 999px;
   background: rgba(83, 67, 59, 0.08);
   color: var(--primary);
-  font-size: 11px;
-  font-weight: 800;
-  letter-spacing: 1px;
-  text-transform: uppercase;
+  font-size: 13px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
 }
 
 .package-card .price {
@@ -2552,34 +2575,69 @@ li {
   .package-grid {
     grid-template-columns: 1fr;
     gap: 18px;
-    padding: 0;
+    padding: 35px 0 0;
   }
 
   .package-card {
-    padding: 14px 18px 26px !important;
-    border-radius: 20px;
+    padding: 20px 20px 30px !important;
+    border-radius: 24px;
+    text-align: center;
+    background: 
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"),
+      rgba(255, 255, 255, 0.15) !important;
+    backdrop-filter: blur(24px) !important;
+    -webkit-backdrop-filter: blur(24px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.4) !important;
+    box-shadow: 0 10px 30px rgba(83, 67, 59, 0.08) !important;
+  }
+
+  .package-card-featured {
+    background: 
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"),
+      linear-gradient(105deg, transparent 35%, rgba(255, 255, 255, 0.4) 48%, rgba(255, 255, 255, 0.8) 50%, rgba(255, 255, 255, 0.4) 52%, transparent 65%),
+      linear-gradient(135deg, rgba(255, 255, 255, 0.5) 0%, rgba(255, 255, 255, 0.15) 100%) !important;
+    background-size: auto, 200% 100%, auto !important;
+    background-repeat: repeat, no-repeat, no-repeat !important;
+    border: 1px solid rgba(255, 255, 255, 0.6) !important;
+    box-shadow: 0 22px 58px rgba(83, 67, 59, 0.15), inset 1px 1px 0px rgba(255, 255, 255, 0.6) !important;
   }
 
   .package-media {
-    height: 176px;
-    margin: -2px -6px 18px;
+    height: 190px;
+    margin: -6px -6px 24px;
     border-radius: 18px;
   }
 
   .package-card-premium {
     grid-column: auto;
+    background: 
+      url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.06'/%3E%3C/svg%3E"),
+      linear-gradient(180deg, rgba(255, 255, 255, 0.25), rgba(255, 248, 238, 0.1)) !important;
   }
 
-  .price-card.package-card h3,
-  .price-card.package-card .price,
+  .package-eyebrow {
+    margin: 0 auto 12px;
+  }
+
+  .price-card.package-card h3 {
+    margin: 0 auto 12px;
+    text-align: center !important;
+  }
+
+  .price-card.package-card h3::after {
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .price-card.package-card .price {
+    text-align: center !important;
+    font-size: 34px;
+  }
+
   .price-card.package-card ul,
   .price-card.package-card li,
   .price-card.package-card .price-header {
     text-align: left !important;
-  }
-
-  .price-card.package-card .price {
-    font-size: 30px;
   }
 
   .package-value {
@@ -3539,7 +3597,19 @@ li {
   margin: 0 auto;
 }
 
+.process-step:hover .step-number {
+  opacity: 0.4;
+  color: #d4af37;
+}
+
 @media (max-width: 991px) {
+
+  .pricing-section {
+  padding: 80px 0 0;
+  content-visibility: auto;
+  contain-intrinsic-size: 1000px;
+}
+
   .process-section {
     padding: 60px 25px;
   }
